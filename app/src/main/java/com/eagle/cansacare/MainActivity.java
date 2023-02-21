@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
 
     TextView[] dots;
     ViewPagerAdapter viewPagerAdapter;
-    private ViewPager.OnPageChangeListener viewListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,51 +76,61 @@ public class MainActivity extends AppCompatActivity {
         mSlideViewPager.addOnPageChangeListener(viewListener);
     }
 
-    public void setUpindicator(int position){
+    public void setUpindicator(int position) {
 
         dots = new TextView[3];
         mDotLayout.removeAllViews();
 
-        for(int i = 0; i < dots.length; i++) {
+        for (int i = 0; i < dots.length; i++) {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226"));
             dots[i].setTextSize(35);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                dots[i].setTextColor(getResources().getColor(R.color.divider_color,getApplicationContext().getTheme()));
-            }else {
-                mDotLayout.addView(dots[i]);
+                dots[i].setTextColor(getResources().getColor(R.color.divider_color, getApplicationContext().getTheme()));
             }
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                dots[position].setTextColor(getResources().getColor(R.color.primary_color,getApplicationContext().getTheme()));
-            }
+            mDotLayout.addView(dots[i]);
+        }
 
-            ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
-                @Override
-                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-                }
-
-                @Override
-                public void onPageSelected(int position) {
-
-                    setUpindicator(position);
-
-                    if (position > 0) {
-                        backbtn.setVisibility(View.VISIBLE);
-                    }else {
-                        backbtn.setVisibility(View.INVISIBLE);
-                    }
-
-                }
-
-                @Override
-                public void onPageScrollStateChanged(int state) {
-
-                }
-            };
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            dots[position].setTextColor(getResources().getColor(R.color.primary_color, getApplicationContext().getTheme()));
         }
     }
+
+    ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+        }
+
+        @Override
+
+        public void onPageSelected(int position) {
+
+            setUpindicator(position);
+
+
+            if (position > 0) {
+
+                backbtn.setVisibility(View.VISIBLE);
+
+            }else {
+
+                backbtn.setVisibility(View.INVISIBLE);
+
+            }
+
+        }
+
+        @Override
+
+        public void onPageScrollStateChanged(int state) {
+
+
+        }
+
+    };
+
 
     private int getItem(int i) {
         return mSlideViewPager.getCurrentItem() + i;
