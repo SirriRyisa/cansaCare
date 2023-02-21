@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">cansaCare</string>
+    <string name="first_on_boarding_page">You are not alone</string>
+
+<!--    description-->
+
+    <string name="first_on_boarding_description">Cancer is not a battle for you to fight alone</string>
+    <string name="second_on_boarding_description">Fight cancer with the support of a community</string>
+    <string name="third_on_boarding_description">Share your story, support others, and thrive together</string>
+    <string name="create_acc_and_sign_in_header">Share your Story</string>
+    <string name="create_acc_and_sign_in_description">Community support, telemedicine, consultations, appointment scheduling,
+        and medication all in one place</string>
+
 </resources>
