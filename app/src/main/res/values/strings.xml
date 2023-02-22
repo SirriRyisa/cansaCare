@@ -2,7 +2,7 @@
     <string name="app_name">cansaCare</string>
     <string name="first_on_boarding_page">You are not alone</string>
 
-<!--    description-->
+    <!--    description-->
 
     <string name="first_on_boarding_description">Cancer is not a battle for you to fight alone</string>
     <string name="second_on_boarding_description">Fight cancer with the support of a community</string>
