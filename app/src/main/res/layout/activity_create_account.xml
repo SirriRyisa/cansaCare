@@ -18,7 +18,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Create a new account"
+            android:text="@string/create_a_new_account"
             android:textColor="@color/primary_text"
             android:fontFamily="serif"
             android:textStyle="bold"
@@ -39,7 +39,7 @@
             app:layout_constraintEnd_toStartOf="@id/newAccount_heading"
             app:layout_constraintTop_toTopOf="@id/newAccount_heading"
             app:layout_constraintBottom_toBottomOf="@id/newAccount_heading"
-            />
+            android:contentDescription="@string/previous_button" />
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -56,7 +56,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="First name"
+                android:text="@string/first_name"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -77,7 +77,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Last name"
+                android:text="@string/last_name"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -97,7 +97,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Email"
+                android:text="@string/email"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -117,7 +117,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Password"
+                android:text="@string/password"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -132,7 +132,7 @@
             app:layout_constraintTop_toBottomOf="@id/passwordTextInput"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Create Account"
+            android:text="@string/create_account"
             android:backgroundTint="@color/primary_color"
             />
 
@@ -151,7 +151,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_small"
-            android:text="Don't have an account?"
+            android:text="@string/don_t_have_an_account"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -162,7 +162,7 @@
             android:id="@+id/my_text_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign In"
+            android:text="@string/sign_in"
             app:layout_constraintTop_toTopOf="@id/textViewSignIn"
             app:layout_constraintStart_toEndOf="@id/textViewSignIn"
             app:layout_constraintBottom_toBottomOf="@id/textViewSignIn"

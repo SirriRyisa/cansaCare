@@ -27,7 +27,7 @@
         android:layout_height="174dp"
         android:layout_margin="50dp"
         android:src="@drawable/first_on_boarding"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/on_boarding_images" />
 
     <TextView
         android:id="@+id/on_boarding_description"

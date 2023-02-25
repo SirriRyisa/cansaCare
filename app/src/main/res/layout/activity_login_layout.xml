@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="@color/primary_text"
         android:fontFamily="serif"
         android:textStyle="bold"
@@ -39,7 +39,7 @@
         app:layout_constraintTop_toTopOf="@id/login_heading"
         app:layout_constraintBottom_toBottomOf="@id/login_heading"
         android:layout_marginEnd="180dp"
-        />
+        android:contentDescription="@string/previous_button" />
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -56,7 +56,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Username"
+            android:text="@string/username"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -79,7 +79,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Password"
+            android:text="@string/password"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -94,7 +94,7 @@
         app:layout_constraintTop_toBottomOf="@id/passwordTextInput"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Login"
+        android:text="@string/login"
         android:backgroundTint="@color/primary_color"
         />
 
@@ -114,7 +114,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_small"
-        android:text="Don't have an account?"
+        android:text="@string/don_t_have_an_account"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,7 +125,7 @@
             android:id="@+id/my_text_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create User"
+            android:text="@string/create_user"
             app:layout_constraintTop_toTopOf="@id/textViewRegister"
             app:layout_constraintStart_toEndOf="@id/textViewRegister"
             app:layout_constraintBottom_toBottomOf="@id/textViewRegister"

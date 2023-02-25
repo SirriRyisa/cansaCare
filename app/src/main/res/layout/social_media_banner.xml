@@ -7,7 +7,7 @@
     <TextView
         android:id="@+id/textviewOr"
         android:layout_width="wrap_content"
-        android:text="or"
+        android:text="@string/or"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,10 +38,10 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/facebookLoginBtn"
-        android:layout_width="match_parent"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_input_margin"
-        android:text="Continue with Facebook"
+        android:text="@string/continue_with_facebook"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,10 +55,10 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/googleLoginBtn"
-        android:layout_width="match_parent"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_input_margin"
-        android:text="Continue with Google"
+        android:text="@string/continue_with_google"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
