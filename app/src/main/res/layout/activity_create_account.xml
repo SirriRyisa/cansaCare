@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateAccount">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        >
+
+        <TextView
+            android:id="@+id/newAccount_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Create a new account"
+            android:textColor="@color/primary_text"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="@dimen/activity_input_margin"
+
+            />
+
+        <ImageView
+            android:id="@+id/back_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_arrow"
+            android:background="@drawable/circle_shape"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/newAccount_heading"
+            app:layout_constraintTop_toTopOf="@id/newAccount_heading"
+            app:layout_constraintBottom_toBottomOf="@id/newAccount_heading"
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/firstnameTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_input_margin"
+            app:boxBackgroundColor="@color/form_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newAccount_heading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:boxStrokeWidth="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="First name"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lastnameTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_input_margin"
+            app:boxBackgroundColor="@color/form_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/firstnameTextInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:boxStrokeWidth="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Last name"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_input_margin"
+            app:boxBackgroundColor="@color/form_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lastnameTextInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:boxStrokeWidth="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_input_margin"
+            app:boxBackgroundColor="@color/form_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailTextInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:boxStrokeWidth="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createAccountBtn"
+            android:layout_width="300dp"
+            android:layout_marginTop="@dimen/activity_input_margin"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/passwordTextInput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Create Account"
+            android:backgroundTint="@color/primary_color"
+            />
+
+        <include
+            android:id="@+id/socialMediaBanner"
+            app:layout_constraintTop_toBottomOf="@id/createAccountBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            layout="@layout/social_media_banner"
+            />
+
+        <TextView
+            android:id="@+id/textViewSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:text="Don't have an account?"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/socialMediaBanner" />
+
+
+        <TextView
+            android:id="@+id/my_text_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign In"
+            app:layout_constraintTop_toTopOf="@id/textViewSignIn"
+            app:layout_constraintStart_toEndOf="@id/textViewSignIn"
+            app:layout_constraintBottom_toBottomOf="@id/textViewSignIn"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/primary_color"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            />
+
+
+
+
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

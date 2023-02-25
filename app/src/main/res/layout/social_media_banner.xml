@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/textviewOr"
+        android:layout_width="wrap_content"
+        android:text="or"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/activity_margin_large" />
+
+    <View
+        app:layout_constraintTop_toTopOf="@id/textviewOr"
+        app:layout_constraintBottom_toBottomOf="@id/textviewOr"
+        app:layout_constraintEnd_toStartOf="@id/textviewOr"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:background="@color/black"
+        android:layout_width="0dp"
+        android:layout_height="1dp" />
+
+    <View
+        app:layout_constraintTop_toTopOf="@id/textviewOr"
+        app:layout_constraintBottom_toBottomOf="@id/textviewOr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textviewOr"
+        android:layout_marginStart="@dimen/margin_small"
+        android:background="@color/black"
+        android:layout_width="0dp"
+        android:layout_height="1dp" />
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/facebookLoginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_input_margin"
+        android:text="Continue with Facebook"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textviewOr"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp"
+        android:drawableLeft="@drawable/ic_facebook_logo"
+        />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/googleLoginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_input_margin"
+        android:text="Continue with Google"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/facebookLoginBtn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp"
+        android:drawableLeft="@drawable/ic_google_logo"
+        />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

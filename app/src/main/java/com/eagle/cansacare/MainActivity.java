@@ -44,11 +44,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(getItem(0) < 3)
+                if(getItem(0) < 3) {
+                    // If not on the last page, move to the next page
                     mSlideViewPager.setCurrentItem(getItem(1), true);
-
-                else{
-                    Intent i = new Intent(MainActivity.this, MainScreen.class);
+                } else {
+                    // If on the last page, start the next activity
+                    Intent i = new Intent(MainActivity.this, GetStarted.class);
                     startActivity(i);
                     finish();
                 }
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(MainActivity.this, MainScreen.class);
+                Intent i = new Intent(MainActivity.this, GetStarted.class);
                 startActivity(i);
                 finish();
 

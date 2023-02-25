@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="activity_margin_large" type="integer">64dp</dimen>
+    <dimen name="margin_small">16dp</dimen>
+    <dimen name="activity_input_margin">32dp</dimen>
+    <dimen name="activity_input_margin_sm">15dp</dimen>
+</resources>
