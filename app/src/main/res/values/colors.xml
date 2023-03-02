@@ -15,5 +15,7 @@
     <color name="primary_color">#FF5722</color>
     <color name="light_primary_color">#FFCCBC</color>
     <color name="divider_color">#BDBDBD</color>
+    <color name="dark_primary_color">#000439</color>
+    <color name="button_color">#F4F4F4</color>
 
 </resources>

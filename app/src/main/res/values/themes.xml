@@ -13,4 +13,11 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Button.Style" parent="ThemeOverlay.Material3.Button.ElevatedButton">
+        <item name="backgroundTint">@color/button_color</item>
+        <item name="background">@color/button_color</item>
+        <item name="backgroundColor">@color/button_color</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
 </resources>

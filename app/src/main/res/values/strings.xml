@@ -2,7 +2,7 @@
     <string name="app_name">cansaCare</string>
     <string name="first_on_boarding_page">You are not alone</string>
 
-<!--    description-->
+    <!--    description-->
 
     <string name="first_on_boarding_description">Cancer is not a battle for you to fight alone</string>
     <string name="second_on_boarding_description">Fight cancer with the support of a community</string>
@@ -10,5 +10,15 @@
     <string name="create_acc_and_sign_in_header">Share your Story</string>
     <string name="create_acc_and_sign_in_description">Community support, telemedicine, consultations, appointment scheduling,
         and medication all in one place</string>
+    <string name="title_activity_home2">HomeActivity2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+<!--    Blog description-->
+
+    <string name="blog_description">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,or randomised words which dontlook even slightly believable. If you are going to use a passage of Lorem Ipsum,you need to be sure there isntanything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorson the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+    </string>
+
 
 </resources>

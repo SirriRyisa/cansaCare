@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "173591741592",
+    "project_id": "cansacare",
+    "storage_bucket": "cansacare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173591741592:android:320659ba6cac64449c3ced",
+        "android_client_info": {
+          "package_name": "com.eagle.cansacare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "173591741592-qqb2l1lf78erckvqdq615265a77ncglf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.eagle.cansacare",
+            "certificate_hash": "b5584cbbc3923ad125e9840f54f9ad1376fe63f2"
+          }
+        },
+        {
+          "client_id": "173591741592-e6ilc2cpr1377ih2dakumnfgqvuilg91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCScVzceS-5OShI8ZOsHPBgBT_Jgsa3BT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "173591741592-e6ilc2cpr1377ih2dakumnfgqvuilg91.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

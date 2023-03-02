@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeActivity2">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar_chat"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/toolbar_round_shape_chat"
+        android:elevation="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.appcompat.widget.Toolbar>
+    <TextView
+        app:layout_constraintStart_toStartOf="@+id/tool_bar_chat"
+        app:layout_constraintTop_toTopOf="@id/tool_bar_chat"
+        android:elevation="41dp"
+        android:layout_margin="16dp"
+        android:id="@+id/text_home_threat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="top"
+        android:text="Threat:"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        app:layout_constraintStart_toStartOf="@+id/text_home_threat"
+        app:layout_constraintTop_toBottomOf="@+id/text_home_threat"
+        app:layout_constraintEnd_toEndOf="@+id/tool_bar_chat"
+        android:id="@+id/text_home_caption"
+        android:elevation="41dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:text="Living with cancer"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

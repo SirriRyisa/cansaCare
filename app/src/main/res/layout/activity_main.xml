@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".MainActivity">
-    
-    
+
+
     <Button
         android:id="@+id/slideViewSkipBtn"
         android:layout_width="wrap_content"
@@ -64,8 +64,5 @@
 
 
     </LinearLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <ImageView
+            android:id="@+id/post_image"
+            android:layout_width="wrap_content"
+            android:layout_height="350dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/primary_color"
+            android:src="@drawable/first_on_boarding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/post_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/post_image"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="Caption"
+            android:textSize="32sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/blog_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/post_caption"
+            android:hint="18 jan 2022 | by Sirri"/>
+
+
+        <TextView
+            android:id="@+id/post_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:paddingLeft="12dp"
+            android:text="@string/blog_description"
+            android:lineSpacingExtra="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/blog_date" />
+
+        <EditText
+            android:id="@+id/blog_comment"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="18dp"
+            android:layout_marginRight="150dp"
+            android:background="@drawable/add_comment_round_shape"
+            android:ems="10"
+            android:hint="Write a comment"
+            android:inputType="textPersonName"
+            android:padding="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/post_description">
+
+        </EditText>
+
+        <Button
+            android:id="@+id/blog_add_btn"
+            style="@style/Button.Style"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/blog_comment"
+            app:layout_constraintStart_toEndOf="@id/blog_comment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/blog_comment"
+            android:hint="SEND"
+            android:textColor="#000000"
+            android:padding="14dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintVertical_bias="0.529"
+            app:layout_constraintHorizontal_bias="0.0"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,12 +1,17 @@
 package com.eagle.cansacare;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -16,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     ViewPager mSlideViewPager;
     LinearLayout mDotLayout;
     Button backbtn, nextbtn, skipbtn;
-
     TextView[] dots;
     ViewPagerAdapter viewPagerAdapter;
 
@@ -44,15 +48,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(getItem(0) < 3)
+                if(getItem(0) < 2)
                     mSlideViewPager.setCurrentItem(getItem(1), true);
 
                 else{
-                    Intent i = new Intent(MainActivity.this, MainScreen.class);
+                    Intent i = new Intent(MainActivity.this, HomeActivity2.class);
                     startActivity(i);
                     finish();
                 }
-
             }
         });
 
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(MainActivity.this, MainScreen.class);
+                Intent i = new Intent(MainActivity.this, HomeActivity2.class);
                 startActivity(i);
                 finish();
 
@@ -102,13 +105,11 @@ public class MainActivity extends AppCompatActivity {
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
         }
-
         @Override
 
         public void onPageSelected(int position) {
 
             setUpindicator(position);
-
 
             if (position > 0) {
 
@@ -117,22 +118,17 @@ public class MainActivity extends AppCompatActivity {
             }else {
 
                 backbtn.setVisibility(View.INVISIBLE);
-
             }
-
         }
 
         @Override
 
         public void onPageScrollStateChanged(int state) {
 
-
         }
-
     };
-
-
     private int getItem(int i) {
+
         return mSlideViewPager.getCurrentItem() + i;
     }
 }
