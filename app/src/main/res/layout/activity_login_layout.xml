@@ -43,7 +43,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/usernameTextInput"
+        android:id="@+id/usernameTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_margin_large"
@@ -54,6 +54,7 @@
         app:boxStrokeWidth="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/username"
@@ -64,19 +65,20 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordTextInput"
+        android:id="@+id/passwordTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_input_margin"
         app:boxBackgroundColor="@color/form_bg"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/usernameTextInput"
+        app:layout_constraintTop_toBottomOf="@id/usernameTextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:boxStrokeWidth="0dp"
 
         >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/password"
@@ -85,13 +87,27 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/forgotPasswordButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_input_margin"
+            android:text="@string/forgot_password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordTextInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/primary_color"
+            android:background="@android:color/transparent"
+            />
+
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginBtn"
         android:layout_width="300dp"
         android:layout_marginTop="@dimen/activity_margin_large"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/passwordTextInput"
+        app:layout_constraintTop_toBottomOf="@id/passwordTextInputLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/login"
@@ -120,9 +136,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/socialMediaBanner" />
 
-
-        <TextView
-            android:id="@+id/my_text_button"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createUserLink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/create_user"
@@ -131,9 +146,11 @@
             app:layout_constraintBottom_toBottomOf="@id/textViewRegister"
             app:layout_constraintEnd_toEndOf="parent"
             android:textColor="@color/primary_color"
-            android:textSize="15sp"
+            android:background="@android:color/transparent"
             android:textStyle="bold"
+            android:textAllCaps="false"
             />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
