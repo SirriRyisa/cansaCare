@@ -15,15 +15,10 @@
     <color name="primary_color">#FF5722</color>
     <color name="light_primary_color">#FFCCBC</color>
     <color name="divider_color">#BDBDBD</color>
-<<<<<<< HEAD
     <color name="dark_primary_color">#000439</color>
     <color name="button_color">#F4F4F4</color>
-=======
     <color name="form_bg">#F6F6F6</color>
     <color name="splash_screen_bg">#FFE7DD</color>
     <color name="secondary_color">#272B64</color>
-
-
->>>>>>> 80ca35fd0b8f297c803a26cf32c7858d0aa3d59c
 
 </resources>
