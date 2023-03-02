@@ -8,8 +8,8 @@
     tools:context=".MainActivity"
     android:padding="20dp"
     >
-    
-    
+
+
     <Button
         android:id="@+id/slideViewSkipBtn"
         android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-    
+
     <LinearLayout
         android:id="@+id/indicator_layout"
         android:layout_width="wrap_content"

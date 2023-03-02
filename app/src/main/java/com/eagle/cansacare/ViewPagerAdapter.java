@@ -11,6 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
+
 public class ViewPagerAdapter extends PagerAdapter {
 
     Context context;
@@ -35,18 +38,19 @@ public class ViewPagerAdapter extends PagerAdapter {
     };
 
     public ViewPagerAdapter(Context context) {
+
         this.context = context;
     }
 
     @Override
     public int getCount() {
+
         return headings.length;
     }
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
         return view == (LinearLayout) object;
-
     }
 
     @NonNull

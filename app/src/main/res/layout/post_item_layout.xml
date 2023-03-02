@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <ImageView
+            android:id="@+id/post_image"
+            android:layout_width="380dp"
+            android:layout_height="350dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/primary_color"
+            android:src="@drawable/first_on_boarding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/post_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:hint="Caption"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBootom_toBottomOf="@+id/post_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/post_description"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="12dp"-->
+<!--            android:paddingLeft="12dp"-->
+<!--            android:text="@string/blog_description"-->
+<!--            android:lineSpacingExtra="8dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/post_caption" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
