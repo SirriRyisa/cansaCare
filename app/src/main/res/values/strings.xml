@@ -10,8 +10,9 @@
     <string name="create_acc_and_sign_in_header">Share your Story</string>
     <string name="create_acc_and_sign_in_description">Community support, telemedicine, consultations, appointment scheduling,
         and medication all in one place</string>
-<<<<<<< HEAD
-    <string name="title_activity_home2">HomeActivity2</string>
+
+
+  <string name="title_activity_home2">HomeActivity2</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -20,9 +21,7 @@
 
     <string name="blog_description">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,or randomised words which dontlook even slightly believable. If you are going to use a passage of Lorem Ipsum,you need to be sure there isntanything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorson the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
     </string>
-
-=======
-    <string name="login">Login</string>
+   <string name="login">Login</string>
     <string name="previous_button">previous button</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
@@ -44,6 +43,8 @@
     <string name="or">or</string>
     <string name="continue_with_facebook">Continue with Facebook</string>
     <string name="continue_with_google">Continue with Google</string>
->>>>>>> 80ca35fd0b8f297c803a26cf32c7858d0aa3d59c
+   <string name="forgot_password">Forgot Password?</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="you_have_a_family_history_of_cancer_showing_symptoms_of_a_cancer_or_has_genuine_concern_for_cancer_diagnosed_patients">You have a family history of cancer, showing symptoms of a cancer, or has genuine concern for cancer diagnosed patients</string>
 
 </resources>
