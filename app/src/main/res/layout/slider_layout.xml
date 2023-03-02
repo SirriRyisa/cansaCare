@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,7 +18,7 @@
         android:textColor="@color/primary_text"
         android:fontFamily="serif"
         android:textStyle="bold"
-        android:textSize="45dp"/>
+        android:textSize="45sp"/>
 
 
     <ImageView
@@ -25,7 +26,8 @@
         android:layout_width="match_parent"
         android:layout_height="174dp"
         android:layout_margin="50dp"
-        android:src="@drawable/first_on_boarding" />
+        android:src="@drawable/first_on_boarding"
+        android:contentDescription="@string/on_boarding_images" />
 
     <TextView
         android:id="@+id/on_boarding_description"
@@ -36,7 +38,7 @@
         android:text="@string/first_on_boarding_description"
         android:textAlignment="center"
         android:textColor="@color/primary_text"
-        android:textSize="24dp" />
+        android:textSize="24sp" />
 
 
 </LinearLayout>

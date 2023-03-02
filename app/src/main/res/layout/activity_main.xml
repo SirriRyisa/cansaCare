@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="20dp"
+    >
 
 
     <Button
@@ -13,8 +15,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        android:text="Skip"
-        android:textSize="18dp"
+        android:text="@string/skip"
+        android:textSize="18sp"
         android:textColor="@color/primary_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -34,8 +36,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/primary_color"
-        android:text="Back"
-        android:textSize="15dp"
+        android:text="@string/back"
+        android:textSize="15sp"
         android:layout_marginLeft="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -47,11 +49,11 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/primary_color"
         android:layout_marginRight="20dp"
-        android:text="Next"
-        android:textSize="15dp"
+        android:text="@string/next"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-    
+
     <LinearLayout
         android:id="@+id/indicator_layout"
         android:layout_width="wrap_content"
@@ -64,5 +66,8 @@
 
 
     </LinearLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

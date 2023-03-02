@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
                     mSlideViewPager.setCurrentItem(getItem(1), true);
 
                 else{
-                    Intent i = new Intent(MainActivity.this, HomeActivity2.class);
+                    Intent i = new Intent(MainActivity.this, GetStarted.class);
+
                     startActivity(i);
                     finish();
                 }
@@ -63,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(MainActivity.this, HomeActivity2.class);
+                Intent i = new Intent(MainActivity.this, GetStarted.class);
+
                 startActivity(i);
                 finish();
 

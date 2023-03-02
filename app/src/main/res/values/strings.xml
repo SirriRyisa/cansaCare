@@ -10,6 +10,7 @@
     <string name="create_acc_and_sign_in_header">Share your Story</string>
     <string name="create_acc_and_sign_in_description">Community support, telemedicine, consultations, appointment scheduling,
         and medication all in one place</string>
+<<<<<<< HEAD
     <string name="title_activity_home2">HomeActivity2</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -20,5 +21,29 @@
     <string name="blog_description">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,or randomised words which dontlook even slightly believable. If you are going to use a passage of Lorem Ipsum,you need to be sure there isntanything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorson the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
     </string>
 
+=======
+    <string name="login">Login</string>
+    <string name="previous_button">previous button</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="create_user">Create User</string>
+    <string name="create_a_new_account">Create a new account</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="email">Email</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_in">Sign In</string>
+    <string name="skip">Skip</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="splash_screen">Splash Screen</string>
+    <string name="get_started_body">Community support, telemedicine consultations, appointment scheduling, and medication reminders all in one place</string>
+    <string name="get_started_heading">Share your story</string>
+    <string name="on_boarding_images">Onboarding Images</string>
+    <string name="or">or</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="continue_with_google">Continue with Google</string>
+>>>>>>> 80ca35fd0b8f297c803a26cf32c7858d0aa3d59c
 
 </resources>
