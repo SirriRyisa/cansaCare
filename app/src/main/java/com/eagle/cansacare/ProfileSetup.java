@@ -34,8 +34,8 @@ public class ProfileSetup extends AppCompatActivity {
                 CurrentProgress = CurrentProgress + 20;
                 progressBar.setProgress(CurrentProgress);
                 progressBar.setMax(100);
-
                 Intent previousScreen = new Intent(ProfileSetup.this, HomeActivity2.class);
+
                 startActivity(previousScreen);
 
 

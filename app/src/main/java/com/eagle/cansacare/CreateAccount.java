@@ -27,8 +27,7 @@ public class CreateAccount extends AppCompatActivity {
 
     ProgressDialog progressDialog;
     FirebaseAuth firebaseAuth;
-  FirebaseFirestore firebaseFirestore;
-
+    FirebaseFirestore firebaseFirestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
