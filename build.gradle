@@ -16,9 +16,10 @@ buildscript {
 }
 
 plugins {
-<<<<<<< HEAD
-    id 'com.android.application' version '7.3.1' apply false
-    id 'com.android.library' version '7.3.1' apply false
+
+    id 'com.android.application' version '7.4.1' apply false
+    id 'com.android.library' version '7.4.1' apply false
+
 
 }
 
@@ -32,8 +33,4 @@ allprojects {
     }
 }
 
-=======
-    id 'com.android.application' version '7.4.1' apply false
-    id 'com.android.library' version '7.4.1' apply false
-}
->>>>>>> 80ca35fd0b8f297c803a26cf32c7858d0aa3d59c
+

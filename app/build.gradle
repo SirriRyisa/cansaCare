@@ -17,6 +17,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures{
+        viewBinding true
+    }
+
     buildTypes {
         release {
             minifyEnabled true
@@ -47,8 +51,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:21.1.0'
     implementation 'com.google.firebase:firebase-core:21.1.1'
     implementation 'com.google.firebase:firebase-database:20.1.0'
-
-
+    implementation 'com.google.firebase:firebase-firestore:24.4.3'
+    implementation 'com.google.android.gms:play-services-auth:20.4.1'
     testImplementation 'junit:junit:4.13.2'
 
 

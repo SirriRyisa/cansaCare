@@ -9,10 +9,10 @@
 
         <ImageView
             android:id="@+id/post_image"
-            android:layout_width="380dp"
+            android:layout_width="wrap_content"
             android:layout_height="350dp"
             android:layout_marginTop="16dp"
-            android:layout_marginLeft="15dp"
+
             android:background="@color/primary_color"
             android:src="@drawable/first_on_boarding"
             app:layout_constraintEnd_toEndOf="parent"
@@ -24,11 +24,10 @@
         android:id="@+id/post_caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
         android:hint="Caption"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintBootom_toBottomOf="@+id/post_image"
+        android:layout_marginLeft="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
