@@ -4,18 +4,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.eagle.cansacare.Post;
-import com.eagle.cansacare.PostAdapter;
+import com.eagle.cansacare.post.Post;
+import com.eagle.cansacare.post.PostAdapter;
 import com.eagle.cansacare.R;
-import com.eagle.cansacare.databinding.FragmentHomeBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
@@ -33,7 +31,7 @@ public class HomeFragment extends Fragment {
     FirebaseDatabase  firebaseDatabase;
     DatabaseReference databaseReference;
 
-    List<Post> postList;
+    List<Post> postList = new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 //        HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
@@ -55,25 +53,21 @@ public class HomeFragment extends Fragment {
 
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-
-//        Getting list post from database
-
+    private void getPosts(){
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                postList = new ArrayList<>();
                 for (DataSnapshot postsnap : snapshot.getChildren()) {
+                    System.out.println(postsnap.getKey());
                     Post post = postsnap.getValue(Post.class);
+                    post.setPostKey(postsnap.getKey());
                     postList.add(post);
                 }
 
+                Collections.reverse(postList);
                 postAdapter = new PostAdapter(getActivity(), postList);
                 postRecyclerView.setAdapter(postAdapter);
-
             }
 
             @Override
@@ -81,6 +75,14 @@ public class HomeFragment extends Fragment {
 
             }
         });
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+//        Getting list post from database
+        getPosts();
     }
 
 //    @Override

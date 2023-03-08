@@ -1,4 +1,4 @@
-package com.eagle.cansacare;
+package com.eagle.cansacare.post;
 
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.ServerValue;

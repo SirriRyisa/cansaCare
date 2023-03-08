@@ -1,5 +1,4 @@
 package com.eagle.cansacare;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,16 +16,11 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
-
 public class SocialBanner extends AppCompatActivity {
-
     SignInButton googleSignIn;
-
     private FirebaseAuth auth;
-
     GoogleSignInOptions googleSignInOptions;
     GoogleSignInClient googleSignInClient;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +37,7 @@ public class SocialBanner extends AppCompatActivity {
 
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
 
-
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-
 
         googleSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,9 +45,6 @@ public class SocialBanner extends AppCompatActivity {
                 SignIn();
             }
         });
-
-
-
     }
     private void SignIn()
     {

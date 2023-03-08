@@ -19,9 +19,9 @@
 
 
         <activity
-            android:name=".PostDetailActivity"
+            android:name=".post.PostDetailActivity"
             android:exported="false"
-            android:label="@string/title_activity_home2" />
+            android:label="HomeActivity2" />
 
         <activity
             android:name=".HomeActivity2"

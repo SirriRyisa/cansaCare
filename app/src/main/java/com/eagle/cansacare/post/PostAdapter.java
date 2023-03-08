@@ -1,15 +1,16 @@
-package com.eagle.cansacare;
+package com.eagle.cansacare.post;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.eagle.cansacare.R;
 
 import java.util.List;
 
@@ -39,7 +40,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder>{
 
     @Override
     public int getItemCount() {
-
         return mList.size();
     }
 
@@ -66,6 +66,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder>{
                     postDetailActivity.putExtra("title", mList.get(position).getTitle());
                     postDetailActivity.putExtra("description", mList.get(position).getDescription());
                     postDetailActivity.putExtra("postKey", mList.get(position).getKey());
+                    System.out.println(mList.get(position).getKey() + "======================");
 
                     long timeStamp = (long) mList.get(position).getTimeStamp();
                     postDetailActivity.putExtra("postDate", timeStamp);
