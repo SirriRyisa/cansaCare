@@ -17,8 +17,8 @@
             android:layout_width="wrap_content"
             android:layout_height="350dp"
             android:layout_marginTop="16dp"
-            android:background="@color/primary_color"
-            android:src="@drawable/first_on_boarding"
+            android:background="@color/divider_color"
+            android:src="@drawable/blog_physioterapy_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,20 +49,21 @@
             android:id="@+id/post_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:paddingLeft="12dp"
-            android:text="@string/blog_description"
+            android:layout_margin="8dp"
+            android:layout_marginTop="56dp"
             android:lineSpacingExtra="8dp"
+            android:text="@string/blog_description"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/blog_date" />
 
         <EditText
             android:id="@+id/blog_comment"
-            android:layout_width="320dp"
+            android:layout_width="290dp"
             android:layout_height="wrap_content"
             android:layout_margin="18dp"
-            android:layout_marginRight="150dp"
+            android:layout_marginRight="90dp"
             android:background="@drawable/add_comment_round_shape"
             android:ems="10"
             android:hint="Write a comment"
@@ -76,7 +77,7 @@
         <Button
             android:id="@+id/blog_add_btn"
             style="@style/Button.Style"
-            android:layout_width="70dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@id/blog_comment"
             app:layout_constraintStart_toEndOf="@id/blog_comment"
@@ -84,11 +85,19 @@
             app:layout_constraintTop_toTopOf="@id/blog_comment"
             android:hint="SEND"
             android:textColor="#000000"
-            android:padding="14dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:padding="16dp"
             app:layout_constraintVertical_bias="0.529"
             app:layout_constraintHorizontal_bias="0.0"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/comment_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/blog_comment">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

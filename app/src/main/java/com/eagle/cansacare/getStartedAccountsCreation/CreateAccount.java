@@ -1,6 +1,5 @@
-package com.eagle.cansacare;
+package com.eagle.cansacare.getStartedAccountsCreation;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -10,21 +9,16 @@ import android.view.View;
 import android.widget.Toast;
 
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.eagle.cansacare.R;
+import com.eagle.cansacare.profileSetUp.ProfileSetup;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
-import com.google.android.material.textview.MaterialTextView;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Objects;
 
-
 public class CreateAccount extends AppCompatActivity {
-
     ProgressDialog progressDialog;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
@@ -56,37 +50,23 @@ public class CreateAccount extends AppCompatActivity {
             String email = Objects.requireNonNull(emailTextView.getText()).toString().trim();
             String password = Objects.requireNonNull(passwordTextView.getText()).toString();
 
-
             progressDialog.show();
-            firebaseAuth.createUserWithEmailAndPassword(email,password)
-                    .addOnSuccessListener(authResult -> {
+            firebaseAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(authResult -> {
 //                                Todo replace MainActivity with actual activity
                         startActivity(new Intent(CreateAccount.this, ProfileSetup.class));
                         progressDialog.cancel();
 
-
                         firebaseFirestore.collection("User")
                                 .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
                                 .set(new UserModel(firstName,lastName,email,password));
-
-                    })
-
-                    .addOnFailureListener(e -> {
+                    }).addOnFailureListener(e -> {
                         Toast.makeText(CreateAccount.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                         progressDialog.cancel();
                     });
-
-
-
-
         });
 
-        goToLogin.setOnClickListener(v -> startActivity(new Intent(CreateAccount.this,Login.class)));
-
+        goToLogin.setOnClickListener(v -> startActivity(new Intent(CreateAccount.this, Login.class)));
 
     }
-
-
-
 
 }

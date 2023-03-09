@@ -1,11 +1,12 @@
-package com.eagle.cansacare;
+package com.eagle.cansacare.getStartedAccountsCreation;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.eagle.cansacare.R;
 
 public class GetStarted extends AppCompatActivity {
 
