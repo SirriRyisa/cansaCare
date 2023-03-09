@@ -1,10 +1,12 @@
-package com.eagle.cansacare;
+package com.eagle.cansacare.onboardingAndSplash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.eagle.cansacare.R;
 
 public class SplashScreen extends AppCompatActivity {
 

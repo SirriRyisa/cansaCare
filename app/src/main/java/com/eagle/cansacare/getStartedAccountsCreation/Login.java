@@ -1,6 +1,5 @@
-package com.eagle.cansacare;
+package com.eagle.cansacare.getStartedAccountsCreation;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -9,17 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.eagle.cansacare.R;
+import com.eagle.cansacare.profileSetUp.ProfileSetup;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textview.MaterialTextView;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -116,7 +112,7 @@ public class Login extends AppCompatActivity {
 
         });
 
-        goToSignup.setOnClickListener(v -> startActivity(new Intent(Login.this,CreateAccount.class)));
+        goToSignup.setOnClickListener(v -> startActivity(new Intent(Login.this, CreateAccount.class)));
 
 
 

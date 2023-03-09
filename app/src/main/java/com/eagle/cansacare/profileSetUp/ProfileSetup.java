@@ -1,22 +1,22 @@
-package com.eagle.cansacare;
+package com.eagle.cansacare.profileSetUp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 
+import com.eagle.cansacare.HomeActivity2;
+import com.eagle.cansacare.R;
 import com.google.android.material.button.MaterialButton;
 
 public class ProfileSetup extends AppCompatActivity {
 
+
     private int CurrentProgress = 0;
     private ProgressBar progressBar;
     private MaterialButton startProgress;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,6 @@ public class ProfileSetup extends AppCompatActivity {
 
         progressBar= findViewById(R.id.progressBar);
         startProgress = findViewById(R.id.next_progress_btn);
-
 
         startProgress.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,12 +37,8 @@ public class ProfileSetup extends AppCompatActivity {
 
                 startActivity(previousScreen);
 
-
             }
         });
-
-
-
 
     }
 }

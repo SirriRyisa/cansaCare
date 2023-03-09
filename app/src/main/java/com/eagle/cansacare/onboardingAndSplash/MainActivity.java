@@ -1,21 +1,19 @@
-package com.eagle.cansacare;
+package com.eagle.cansacare.onboardingAndSplash;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
-import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.eagle.cansacare.getStartedAccountsCreation.GetStarted;
+import com.eagle.cansacare.R;
 
 public class MainActivity extends AppCompatActivity {
     ViewPager mSlideViewPager;
