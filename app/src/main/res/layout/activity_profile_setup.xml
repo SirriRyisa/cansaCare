@@ -84,7 +84,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/hopefulCategoryHeading"
                 />
-            <com.google.android.material.radiobutton.MaterialRadioButton
+            <RadioButton
                 android:id="@+id/hopefulRadioBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -152,7 +152,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/fighterCategoryHeading"
                 />
-            <com.google.android.material.radiobutton.MaterialRadioButton
+            <RadioButton
                 android:id="@+id/fighterRadioBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -219,7 +219,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/survivorCategoryHeading"
                 />
-            <com.google.android.material.radiobutton.MaterialRadioButton
+            <RadioButton
                 android:id="@+id/survivorRadioBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -292,10 +292,5 @@
         android:textColor="@color/primary_color"
 
         />
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
