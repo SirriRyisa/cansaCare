@@ -237,8 +237,6 @@ public class HomeActivity2 extends AppCompatActivity {
         DatabaseReference myRef = database.getReference("Posts").push();
         String key = myRef.getKey();
 
-
-        System.out.println(key + "================");
         post.setPostKey(key);
 
         myRef.setValue(post.toMap()).addOnSuccessListener(unused -> {

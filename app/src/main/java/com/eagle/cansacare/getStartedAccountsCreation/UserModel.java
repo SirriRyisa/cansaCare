@@ -1,4 +1,4 @@
-package com.eagle.cansacare;
+package com.eagle.cansacare.getStartedAccountsCreation;
 
 public class UserModel {
     private String firstname,lastname,email,password;
