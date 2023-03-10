@@ -8,8 +8,13 @@
 
     <item
         android:id="@+id/navigation_dashboard"
+<<<<<<< HEAD
+        android:icon="@drawable/ic_schedule"
+        android:title="@string/booking" />
+=======
         android:icon="@drawable/message_navbar"
         android:title="Chats" />
+>>>>>>> 9b3d7534da11640e7096af4b5afbaaa93692461d
 
     <item
         android:id="@+id/navigation_notifications"

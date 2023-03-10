@@ -54,11 +54,13 @@
         app:boxStrokeWidth="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:inputType="textEmailAddress"
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="UsersName"
-            />
+            android:hint="@string/username"
+            android:textColorHint="@color/divider_color"
+            android:textColor="@color/black"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,7 +83,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
-            />
+            android:inputType="textPassword"/>
+
 
     </com.google.android.material.textfield.TextInputLayout>
 

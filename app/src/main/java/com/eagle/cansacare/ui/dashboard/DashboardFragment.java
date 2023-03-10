@@ -7,8 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+<<<<<<< HEAD
+import androidx.lifecycle.ViewModelProvider;
+import com.eagle.cansacare.databinding.FragmentDashboardBinding;
+
+
+=======
 import com.eagle.cansacare.R;
 import com.eagle.cansacare.thread.ThreadDisplay;
+>>>>>>> 9b3d7534da11640e7096af4b5afbaaa93692461d
 public class DashboardFragment extends Fragment {
 
     CardView mainThread, cervicalCancer,breastCancer,prostateCancer;
