@@ -20,4 +20,10 @@
         <item name="backgroundColor">@color/button_color</item>
         <item name="cornerRadius">16dp</item>
     </style>
+    <style name="Theme.CansaCare.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.CansaCare.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.CansaCare.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

@@ -18,7 +18,7 @@
             android:layout_height="350dp"
             android:layout_marginTop="16dp"
             android:background="@color/divider_color"
-            android:src="@drawable/blog_physioterapy_image"
+            android:src="@drawable/physiotherapy"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
