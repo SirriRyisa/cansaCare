@@ -9,12 +9,14 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -23,7 +25,7 @@ import java.util.List;
 public class ThreadDisplay extends AppCompatActivity {
     private final List<ThreadPost> threadPosts = new ArrayList<>(); // Define the list of posts
 
-    ImageView goBackButton;
+    ImageView goBackButton, createPost;
 
     DatabaseReference mDatabase;
 
@@ -38,6 +40,10 @@ public class ThreadDisplay extends AppCompatActivity {
 
         ThreadAdapter threadAdapter = new ThreadAdapter(threadPosts); // create a new instance of threadAdapter
         recyclerView.setAdapter(threadAdapter); // set the adapter for the RecyclerView
+
+
+        // Define the reference of the database
+        mDatabase = FirebaseDatabase.getInstance().getReference("threadPosts");
 
         // Read the posts from Firebase Realtime Database
         mDatabase.addValueEventListener(new ValueEventListener() {
@@ -64,6 +70,12 @@ public class ThreadDisplay extends AppCompatActivity {
         goBackButton.setOnClickListener(v -> {
             Intent intent = new Intent(this, HomeActivity2.class);
             intent.putExtra("goToFragmentChannel", true);
+            startActivity(intent);
+        });
+
+        createPost =findViewById(R.id.create_new_post_thread);
+        createPost.setOnClickListener(v -> {
+            Intent intent = new Intent(ThreadDisplay.this,CreateNewThreadPost.class);
             startActivity(intent);
         });
     }
