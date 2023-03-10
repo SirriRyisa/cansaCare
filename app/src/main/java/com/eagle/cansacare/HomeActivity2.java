@@ -126,7 +126,6 @@ public class HomeActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                System.out.println("clicking");
 //                ImagePickerView.Builder()
 //                        .setup {
 //                    name { RESULT_NAME }
