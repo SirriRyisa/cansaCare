@@ -17,7 +17,7 @@
 >>>>>>> 9b3d7534da11640e7096af4b5afbaaa93692461d
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/book_appointment"
         android:icon="@drawable/booking_calendar_navbar"
         android:title="Booking" />
 
