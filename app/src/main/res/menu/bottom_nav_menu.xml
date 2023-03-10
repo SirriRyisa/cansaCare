@@ -13,8 +13,8 @@
 
     <item
         android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:icon="@drawable/booking_calendar_navbar"
+        android:title="Booking" />
 
     <item
         android:id="@+id/navigation_personalProfile"
