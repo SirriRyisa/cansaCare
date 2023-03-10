@@ -61,15 +61,11 @@ public class CreateAccount extends AppCompatActivity {
                 firebaseFirestore.collection("User")
                                 .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
                                 .set(new UserModel(firstName,lastName,email,password,userId = FirebaseAuth.getInstance().getUid(),displayName = firstName + lastName));
-
-<<<<<<< HEAD:app/src/main/java/com/eagle/cansacare/CreateAccount.java
-                    })
+             })
 
 
                     .addOnFailureListener(e -> {
-=======
             }).addOnFailureListener(e -> {
->>>>>>> 9b3d7534da11640e7096af4b5afbaaa93692461d:app/src/main/java/com/eagle/cansacare/getStartedAccountsCreation/CreateAccount.java
                         Toast.makeText(CreateAccount.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                         progressDialog.cancel();
                     });
