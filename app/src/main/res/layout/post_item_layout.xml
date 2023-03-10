@@ -32,14 +32,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> d723ba54a23044405b0dd437670ea8f78b14de79
-=======
->>>>>>> 554227d8bf9d551361f45e47519a861d8d5b84a2
     </androidx.constraintlayout.widget.ConstraintLayout>
