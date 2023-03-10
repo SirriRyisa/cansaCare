@@ -23,6 +23,8 @@ public class CreateAccount extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
 
+    String userId,displayName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,10 +58,11 @@ public class CreateAccount extends AppCompatActivity {
                         startActivity(new Intent(CreateAccount.this, ProfileSetup.class));
                         progressDialog.cancel();
 
-                        firebaseFirestore.collection("User")
+                firebaseFirestore.collection("User")
                                 .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
-                                .set(new UserModel(firstName,lastName,email,password));
-                    }).addOnFailureListener(e -> {
+                                .set(new UserModel(firstName,lastName,email,password,userId = FirebaseAuth.getInstance().getUid(),displayName = firstName + lastName));
+
+            }).addOnFailureListener(e -> {
                         Toast.makeText(CreateAccount.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                         progressDialog.cancel();
                     });
@@ -68,5 +71,4 @@ public class CreateAccount extends AppCompatActivity {
         goToLogin.setOnClickListener(v -> startActivity(new Intent(CreateAccount.this, Login.class)));
 
     }
-
 }
