@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+
 import java.util.Objects;
 
 public class CreateNewThreadPost extends AppCompatActivity {
@@ -24,7 +26,6 @@ public class CreateNewThreadPost extends AppCompatActivity {
     private EditText postEditText;
     private DatabaseReference  databaseReference = FirebaseDatabase.getInstance().getReference();
     private final CollectionReference databaseReferenceStore = FirebaseFirestore.getInstance().collection("User");
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +39,11 @@ public class CreateNewThreadPost extends AppCompatActivity {
         // Get a reference to the posts node in the Realtime Database
         databaseReference = databaseReference.child("threadPosts");
 
+
         postButton.setOnClickListener(view -> {
             // Get the current user's Name
 //            String patientName = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName();
+
             String userId = Objects.requireNonNull(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
 
             Log.e("USER", userId);
@@ -72,9 +75,6 @@ public class CreateNewThreadPost extends AppCompatActivity {
                 // Finish the activity and go back to the main activity
                 finish();
             });
-
-
-
 
         });
 

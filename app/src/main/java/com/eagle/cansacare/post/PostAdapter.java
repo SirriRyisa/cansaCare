@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -47,14 +48,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder>{
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView txtViewCaption, txtViewDescription;
-//        ImageView postImg;
+        ImageView postImg;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             txtViewCaption = itemView.findViewById(R.id.post_caption);
 //            txtViewDescription = itemView.findViewById(R.id.post_description);
-//            postImg = itemView.findViewById(R.id.post_image);
+            postImg = itemView.findViewById(R.id.post_image);
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +67,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder>{
                     postDetailActivity.putExtra("title", mList.get(position).getTitle());
                     postDetailActivity.putExtra("description", mList.get(position).getDescription());
                     postDetailActivity.putExtra("postKey", mList.get(position).getKey());
-                    System.out.println(mList.get(position).getKey() + "======================");
 
                     long timeStamp = (long) mList.get(position).getTimeStamp();
                     postDetailActivity.putExtra("postDate", timeStamp);

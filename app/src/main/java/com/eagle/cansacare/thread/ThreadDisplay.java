@@ -67,6 +67,7 @@ public class ThreadDisplay extends AppCompatActivity {
         });
 
         goBackButton = findViewById(R.id.send_back_thread);
+
         goBackButton.setOnClickListener(v -> {
             Intent intent = new Intent(this, HomeActivity2.class);
             intent.putExtra("goToFragmentChannel", true);

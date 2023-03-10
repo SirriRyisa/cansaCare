@@ -57,7 +57,7 @@
                 android:id="@+id/firstnameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/first_name"
+                android:hint="@string/first_name"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -79,7 +79,7 @@
                 android:id="@+id/lastnameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/last_name"
+                android:hint="@string/last_name"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -100,7 +100,7 @@
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/email"
+                android:hint="@string/email"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -121,12 +121,10 @@
                 android:id="@+id/passwordEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/password"
+                android:hint="@string/password"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
-
-
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/createAccountBtn"
