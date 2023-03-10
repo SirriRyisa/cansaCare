@@ -8,24 +8,14 @@
     <string name="second_on_boarding_description">Fight cancer with the support of a community</string>
     <string name="third_on_boarding_description">Share your story, support others, and thrive together</string>
     <string name="create_acc_and_sign_in_header">Share your Story</string>
-<<<<<<< HEAD
-    <string name="create_acc_and_sign_in_description">Community support, telemedicine, consultations, appointment scheduling and medication all in one place</string>
-    <string name="title_activity_home2">HomeActivity2</string>
-
-=======
     <string name="create_acc_and_sign_in_description">Community support, telemedicine, consultations, appointment scheduling,and medication all in one place</string>
     <string name="title_activity_home2">HomeActivity2</string>
->>>>>>> 9b3d7534da11640e7096af4b5afbaaa93692461d
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_booking">Booking</string>
     <string name="title_profile">Profile</string>
-
-<<<<<<< HEAD
-=======
     <string name="my_text">This is an <u>underline</u>.</string>
 
->>>>>>> 9b3d7534da11640e7096af4b5afbaaa93692461d
     <!--    Blog description-->
 
     <string name="blog_description">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,or randomised words which dontlook even slightly believable. If you are going to use a passage of Lorem Ipsum,you need to be sure there isntanything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorson the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
@@ -57,7 +47,7 @@
 
     <string name="already_have_an_account">Already have an account?</string>
     <string name="you_have_a_family_history_of_cancer_showing_symptoms_of_a_cancer_or_has_genuine_concern_for_cancer_diagnosed_patients">You have a family history of cancer, showing symptoms of a cancer, or has genuine concern for cancer diagnosed patients</string>
-<<<<<<< HEAD
+
     <string name="search">search</string>
     <string name="booking">Booking</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -72,7 +62,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="serviceName">Dr. Lawrence Agyei</string>
     <string name="serviceTitle">Dietician</string>
-=======
+
     <string name="thread">Threads</string>
     <string name="main_thread">#Main thread</string>
     <string name="curious_thread">Curious thread</string>
@@ -90,6 +80,6 @@
     <string name="share_with_the_community">Share with the community</string>
     <string name="edit_text_hint">Share freely your thoughts with the community and support your pairs</string>
     <string name="post_send">Share</string>
->>>>>>> 9b3d7534da11640e7096af4b5afbaaa93692461d
+
 
 </resources>

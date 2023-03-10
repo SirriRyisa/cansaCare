@@ -3,13 +3,7 @@ package com.eagle.cansacare.getStartedAccountsCreation;
 public class UserModel {
     private String firstname, lastname, email, password, userId, displayName;
 
-<<<<<<< HEAD:app/src/main/java/com/eagle/cansacare/UserModel.java
-    private boolean fighter, survivor, hopeful;
-
-    public UserModel(){
-=======
     public UserModel() {
->>>>>>> 9b3d7534da11640e7096af4b5afbaaa93692461d:app/src/main/java/com/eagle/cansacare/getStartedAccountsCreation/UserModel.java
 
     }
 
