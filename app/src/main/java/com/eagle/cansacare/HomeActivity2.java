@@ -6,26 +6,22 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
-import com.eagle.cansacare.databinding.ActivityHome2Binding;
 import com.eagle.cansacare.post.Post;
 import com.eagle.cansacare.ui.dashboard.DashboardFragment;
 import com.eagle.cansacare.ui.home.HomeFragment;
-import com.eagle.cansacare.ui.notifications.NotificationsFragment;
+import com.eagle.cansacare.ui.bookings.BookingFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -103,7 +99,7 @@ public class HomeActivity2 extends AppCompatActivity {
             } else if (menuSelectedId == R.id.navigation_dashboard) {
                 fragment = new DashboardFragment();
             } else {
-                fragment = new NotificationsFragment();
+                fragment = new BookingFragment();
             }
 
             performFragmentTransaction(fragment);
