@@ -71,6 +71,7 @@ public class CreateAccount extends AppCompatActivity {
 
                     })
 
+
                     .addOnFailureListener(e -> {
                         Toast.makeText(CreateAccount.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                         progressDialog.cancel();

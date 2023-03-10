@@ -3,6 +3,8 @@ package com.eagle.cansacare;
 public class UserModel {
     private String firstname,lastname,email,password;
 
+    private boolean fighter, survivor, hopeful;
+
     public UserModel(){
 
     }
