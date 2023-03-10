@@ -12,10 +12,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
+        android:enableOnBackInvokedCallback="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CansaCare"
-        tools:targetApi="31">
+        tools:targetApi="33">
         <activity
             android:name=".CreateNewThreadPost"
             android:exported="false" />

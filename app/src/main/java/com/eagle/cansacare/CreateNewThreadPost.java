@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,6 +12,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Objects;
 
@@ -36,9 +36,8 @@ public class CreateNewThreadPost extends AppCompatActivity {
 
         postButton.setOnClickListener(view -> {
             // Get the current user's Name
-//            String PatientName = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
-            String PatientName = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName();
-
+//            String patientName = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName();
+            String patientName = Objects.requireNonNull(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
             // Generate a new ID for the post
             String postId = postsRef.push().getKey();
 
@@ -49,7 +48,9 @@ public class CreateNewThreadPost extends AppCompatActivity {
             long postTime = System.currentTimeMillis();
 
             // Create a new Post object with the generated ID, current user's ID, post text, and timestamp
-            ThreadPost threadPost = new ThreadPost(postId,PatientName,postContent,postTime,0);
+            ThreadPost threadPost = new ThreadPost(postId, patientName, postContent, postTime, 0);
+
+            //postId, PatientName, postContent, postTime, 0
 
             // Save the post to the Realtime Database
             assert postId != null;
@@ -63,9 +64,10 @@ public class CreateNewThreadPost extends AppCompatActivity {
         });
 
         goBackButton.setOnClickListener(v -> {
-            Intent intent = new Intent(CreateNewThreadPost.this,ThreadDisplay.class);
+            Intent intent = new Intent(CreateNewThreadPost.this, ThreadDisplay.class);
             startActivity(intent);
         });
-}
+
+    }
 
 }
