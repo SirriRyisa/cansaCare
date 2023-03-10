@@ -3,17 +3,17 @@ package com.eagle.cansacare;
 public class ThreadPost {
 
     private String postId;
-    private static String patientName;
-    private static String contentPost;
-    private static long postTime;
-    private static int likes;
+    private String patientName;
+    private String contentPost;
+    private long postTime;
+    private int likes;
 
     public ThreadPost(String postId, String patientName, String contentPost, long postTime, int likes) {
         this.postId = postId;
-        ThreadPost.patientName = patientName;
-        ThreadPost.contentPost = contentPost;
-        ThreadPost.postTime = postTime;
-        ThreadPost.likes = likes;
+        this.patientName = patientName;
+        this.contentPost = contentPost;
+        this.postTime = postTime;
+        this.likes = likes;
     }
 
     public ThreadPost() {
@@ -27,36 +27,37 @@ public class ThreadPost {
         this.postId = postId;
     }
 
-    public static String getPatientName() {
+    public String getPatientName() {
+
         return patientName;
     }
 
     public void setPatientName(String patientName) {
-        ThreadPost.patientName = patientName;
+        this.patientName = patientName;
     }
 
-    public static String getContentPost() {
+    public String getContentPost() {
         return contentPost;
     }
 
     public void setContentPost(String contentPost) {
-        ThreadPost.contentPost = contentPost;
+        this.contentPost = contentPost;
     }
 
-    public static long getPostTime() {
+    public long getPostTime() {
         return postTime;
     }
 
     public void setPostTime(long postTime) {
-        ThreadPost.postTime = postTime;
+        this.postTime = postTime;
     }
 
-    public static int getLikes() {
+    public int getLikes() {
         return likes;
     }
 
     public void setLikes(int likes) {
-        ThreadPost.likes = likes;
+        this.likes = likes;
     }
 
     public void like() {

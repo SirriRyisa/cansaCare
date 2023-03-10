@@ -34,7 +34,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class HomeActivity2 extends AppCompatActivity {
 
     private static final int REQUESCODE = 1;
-    private ActivityHome2Binding binding;
+//    private ActivityHome2Binding binding;
     private static final int PReqCode = 2;
     //    private static final int SELECT_PICTURE = 1;
     Dialog popAddComment;
@@ -126,7 +126,6 @@ public class HomeActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                System.out.println("clicking");
 //                ImagePickerView.Builder()
 //                        .setup {
 //                    name { RESULT_NAME }

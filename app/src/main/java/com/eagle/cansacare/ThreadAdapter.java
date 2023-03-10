@@ -22,9 +22,9 @@ public class ThreadAdapter extends RecyclerView.Adapter<ThreadAdapter.ThreadView
 
     public ThreadAdapter(List<ThreadPost> threadPosts) {
         // Sort the posts in descending order based on their post time
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            Collections.sort(threadPosts, Comparator.comparingLong(p -> ThreadPost.getPostTime()));
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//            Collections.sort(threadPosts, Comparator.comparingLong(p -> ThreadPost.getPostTime()));
+//        }
         this.threadPosts = threadPosts;
     }
 
@@ -43,15 +43,15 @@ public class ThreadAdapter extends RecyclerView.Adapter<ThreadAdapter.ThreadView
         ThreadPost threadPost = threadPosts.get(position);
 
         // Bind the data to the views
-        holder.postContentTextView.setText(ThreadPost.getContentPost());
-        holder.patientTextView.setText(ThreadPost.getPatientName());
-        holder.postTime.setText(getFormattedTime(ThreadPost.getPostTime()));
-        holder.likesTextView.setText(Integer.toString(ThreadPost.getLikes()));
+        holder.postContentTextView.setText(threadPost.getContentPost());
+        holder.patientTextView.setText(threadPost.getPatientName());
+        holder.postTime.setText(getFormattedTime(threadPost.getPostTime()));
+        holder.likesTextView.setText(Integer.toString(threadPost.getLikes()));
 
         // Set click listeners for the like and dislike buttons
         holder.likeButton.setOnClickListener(view -> {
             threadPost.like();
-            holder.likesTextView.setText(Integer.toString(ThreadPost.getLikes()));
+            holder.likesTextView.setText(Integer.toString(threadPost.getLikes()));
         });
 
         // Set click listener for the whole item view
