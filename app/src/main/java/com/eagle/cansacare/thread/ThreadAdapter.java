@@ -1,8 +1,6 @@
-package com.eagle.cansacare;
+package com.eagle.cansacare.thread;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Collections;
-import java.util.Comparator;
+import com.eagle.cansacare.R;
+
 import java.util.List;
 
 public class ThreadAdapter extends RecyclerView.Adapter<ThreadAdapter.ThreadViewHolder>{

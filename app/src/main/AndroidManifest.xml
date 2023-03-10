@@ -18,10 +18,10 @@
         android:theme="@style/Theme.CansaCare"
         tools:targetApi="33">
         <activity
-            android:name=".CreateNewThreadPost"
+            android:name=".thread.CreateNewThreadPost"
             android:exported="false" />
         <activity
-            android:name=".ThreadDisplay"
+            android:name=".thread.ThreadDisplay"
             android:exported="false" />
         <activity
             android:name=".post.PostDetailActivity"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateNewThreadPost">
+    tools:context=".thread.CreateNewThreadPost">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_header_create_post"
