@@ -1,4 +1,4 @@
-package com.eagle.cansacare;
+package com.eagle.cansacare.onboardingAndSplash;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
+import com.eagle.cansacare.R;
 import com.squareup.picasso.Picasso;
 
 public class ViewPagerAdapter extends PagerAdapter {

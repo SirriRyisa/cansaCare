@@ -1,8 +1,10 @@
-package com.eagle.cansacare;
+package com.eagle.cansacare.profileSetUp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.eagle.cansacare.R;
 
 public class ProfileSetupDetails extends AppCompatActivity {
 

@@ -58,6 +58,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/blog_date" />
 
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/comment_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/post_description">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
         <EditText
             android:id="@+id/blog_comment"
             android:layout_width="290dp"
@@ -70,7 +81,7 @@
             android:inputType="textPersonName"
             android:padding="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/post_description">
+            app:layout_constraintTop_toBottomOf="@id/comment_recyclerView">
 
         </EditText>
 
@@ -88,16 +99,6 @@
             android:padding="16dp"
             app:layout_constraintVertical_bias="0.529"
             app:layout_constraintHorizontal_bias="0.0"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/comment_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/blog_comment">
-
-        </androidx.recyclerview.widget.RecyclerView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

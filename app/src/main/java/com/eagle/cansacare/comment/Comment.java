@@ -1,4 +1,4 @@
-package com.eagle.cansacare;
+package com.eagle.cansacare.comment;
 
 import com.google.firebase.database.Exclude;
 
@@ -8,6 +8,18 @@ import java.util.Map;
 public class Comment {
     private String content, userId, userName;
     private Object timeStamp;
+
+
+    @Exclude
+    private String key;
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public Comment() {
 

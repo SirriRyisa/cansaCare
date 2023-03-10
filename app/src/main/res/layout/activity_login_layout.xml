@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
+    tools:context=".getStartedAccountsCreation.Login"
 
     >
 
@@ -60,11 +60,9 @@
             android:layout_height="wrap_content"
             android:hint="@string/username"
             android:textColorHint="@color/divider_color"
-            android:textColor="@color/black"
-            />
+            android:textColor="@color/black"/>
 
     </com.google.android.material.textfield.TextInputLayout>
-
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -85,8 +83,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
-            android:inputType="textPassword"
-            />
+            android:inputType="textPassword"/>
+
 
     </com.google.android.material.textfield.TextInputLayout>
 

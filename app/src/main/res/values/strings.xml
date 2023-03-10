@@ -8,13 +8,23 @@
     <string name="second_on_boarding_description">Fight cancer with the support of a community</string>
     <string name="third_on_boarding_description">Share your story, support others, and thrive together</string>
     <string name="create_acc_and_sign_in_header">Share your Story</string>
+<<<<<<< HEAD
     <string name="create_acc_and_sign_in_description">Community support, telemedicine, consultations, appointment scheduling and medication all in one place</string>
     <string name="title_activity_home2">HomeActivity2</string>
 
+=======
+    <string name="create_acc_and_sign_in_description">Community support, telemedicine, consultations, appointment scheduling,and medication all in one place</string>
+    <string name="title_activity_home2">HomeActivity2</string>
+>>>>>>> 9b3d7534da11640e7096af4b5afbaaa93692461d
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
+<<<<<<< HEAD
+=======
+    <string name="my_text">This is an <u>underline</u>.</string>
+
+>>>>>>> 9b3d7534da11640e7096af4b5afbaaa93692461d
     <!--    Blog description-->
 
     <string name="blog_description">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,or randomised words which dontlook even slightly believable. If you are going to use a passage of Lorem Ipsum,you need to be sure there isntanything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorson the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
@@ -46,6 +56,7 @@
 
     <string name="already_have_an_account">Already have an account?</string>
     <string name="you_have_a_family_history_of_cancer_showing_symptoms_of_a_cancer_or_has_genuine_concern_for_cancer_diagnosed_patients">You have a family history of cancer, showing symptoms of a cancer, or has genuine concern for cancer diagnosed patients</string>
+<<<<<<< HEAD
     <string name="search">search</string>
     <string name="booking">Booking</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -60,5 +71,24 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="serviceName">Dr. Lawrence Agyei</string>
     <string name="serviceTitle">Dietician</string>
+=======
+    <string name="thread">Threads</string>
+    <string name="main_thread">#Main thread</string>
+    <string name="curious_thread">Curious thread</string>
+    <string name="cervical_cancer">Cervical cancer</string>
+    <string name="breast_cancer">Breast Cancer</string>
+    <string name="prostate_cancer">Prostate cancer</string>
+    <string name="send_back_button">Send back button</string>
+    <string name="patient_profile_picture">patient_profile_picture</string>
+    <string name="patient_name_sample">Georges C DIEME</string>
+    <string name="post_sample_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</string>
+    <string name="time_sample">11:24pm</string>
+    <string name="comments">comments</string>
+    <string name="number_sample">23</string>
+    <string name="add_new_post">add new post</string>
+    <string name="share_with_the_community">Share with the community</string>
+    <string name="edit_text_hint">Share freely your thoughts with the community and support your pairs</string>
+    <string name="post_send">Share</string>
+>>>>>>> 9b3d7534da11640e7096af4b5afbaaa93692461d
 
 </resources>

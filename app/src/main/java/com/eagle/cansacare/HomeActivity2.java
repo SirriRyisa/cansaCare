@@ -16,9 +16,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 
 import com.eagle.cansacare.databinding.ActivityHome2Binding;
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.eagle.cansacare.post.Post;
+import com.eagle.cansacare.ui.dashboard.DashboardFragment;
+import com.eagle.cansacare.ui.home.HomeFragment;
+import com.eagle.cansacare.ui.notifications.NotificationsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
@@ -30,9 +34,9 @@ import com.google.firebase.database.FirebaseDatabase;
 public class HomeActivity2 extends AppCompatActivity {
 
     private static final int REQUESCODE = 1;
-    private ActivityHome2Binding binding;
+//    private ActivityHome2Binding binding;
     private static final int PReqCode = 2;
-//    private static final int SELECT_PICTURE = 1;
+    //    private static final int SELECT_PICTURE = 1;
     Dialog popAddComment;
     FirebaseAuth mAuth;
     FirebaseUser currentUser;
@@ -66,35 +70,62 @@ public class HomeActivity2 extends AppCompatActivity {
         });
 
         BottomNavigationView navView = findViewById(R.id.nav_view_home);
-        navView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int selectedItemId = item.getItemId();
-                switch (selectedItemId) {
-                    case R.id.navigation_dashboard:
-//                        getSupportFragmentManager().beginTransaction()
-//                            .setReorderingAllowed(true)
-//                            .add(R.id.nav_host_fragment_activity_home2, ExampleFragment.class, null)
-//                            .commit();
-                        break;
-                    case R.id.navigation_home: //we change the fragment here ;
-                        break;
-                    case R.id.navigation_notifications: //we change the fragment here ;
-                        break;
+//        navView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                int selectedItemId = item.getItemId();
+//                switch (selectedItemId) {
+//                    case R.id.navigation_dashboard:
+////                        getSupportFragmentManager().beginTransaction()
+////                            .setReorderingAllowed(true)
+////                            .add(R.id.nav_host_fragment_activity_home2, ExampleFragment.class, null)
+////                            .commit();
+//                        break;
+//                    case R.id.navigation_home: //we change the fragment here ;
+//                        break;
+//                    case R.id.navigation_notifications: //we change the fragment here ;
+//                        break;
+//
+//                }
+//                return true;
+//            }
+//        });
+//    }
+        performFragmentTransaction(new HomeFragment());
 
-                }
-                return true;
+        navView.setOnItemSelectedListener(item -> {
+            int menuSelectedId = item.getItemId();
+
+            Fragment fragment;
+
+            if (menuSelectedId == R.id.navigation_home) {
+                fragment = new HomeFragment();
+            } else if (menuSelectedId == R.id.navigation_dashboard) {
+                fragment = new DashboardFragment();
+            } else {
+                fragment = new NotificationsFragment();
             }
+
+            performFragmentTransaction(fragment);
+            return true;
         });
+
     }
 
-    private void setupNewsPostImage(){
+    private void performFragmentTransaction(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.nav_host_fragment_activity_home2, fragment, "ok yes")
+                .commit();
+
+    }
+
+    private void setupNewsPostImage() {
 
         popupAddBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                System.out.println("clicking");
 //                ImagePickerView.Builder()
 //                        .setup {
 //                    name { RESULT_NAME }
@@ -115,7 +146,6 @@ public class HomeActivity2 extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-
         popAddComment.show();
     }
 
@@ -189,7 +219,7 @@ public class HomeActivity2 extends AppCompatActivity {
 //                    });
 
 
-                }else{
+                } else {
                     showMessage("Please a field in the title and description");
                     popupAddBtn.setVisibility(View.VISIBLE);
                     postProgressBar.setVisibility(View.INVISIBLE);
@@ -199,14 +229,15 @@ public class HomeActivity2 extends AppCompatActivity {
         });
 
         popAddComment.show();
-   }
+    }
 
     private void addPost(Post post) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Posts").push();
         String key = myRef.getKey();
+
         post.setPostKey(key);
-        
+
         myRef.setValue(post.toMap()).addOnSuccessListener(unused -> {
             showMessage("Post added successfully");
             postProgressBar.setVisibility(View.INVISIBLE);
@@ -217,7 +248,7 @@ public class HomeActivity2 extends AppCompatActivity {
     }
 
     private void showMessage(String message) {
-        Toast.makeText(HomeActivity2.this, message,Toast.LENGTH_LONG).show();
+        Toast.makeText(HomeActivity2.this, message, Toast.LENGTH_LONG).show();
     }
 
 }

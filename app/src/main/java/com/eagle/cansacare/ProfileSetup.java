@@ -20,11 +20,11 @@ public class ProfileSetup extends AppCompatActivity {
 
     private int CurrentProgress = 0;
     private ProgressBar progressBar;
-    private MaterialButton startProgress;
+    private Button startProgress;
 
-    private MaterialRadioButton hopefulRadioBtn;
-    private MaterialRadioButton fighterRadioBtn;
-    private MaterialRadioButton survivorRadioBtn;
+    private RadioButton hopefulRadioBtn;
+    private RadioButton fighterRadioBtn;
+    private RadioButton survivorRadioBtn;
 
 
 

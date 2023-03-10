@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
     <uses-permission android:name="android.permission.READ_CALENDAR"/>
 
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -19,6 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CansaCare"
         tools:targetApi="33">
+
         <activity
             android:name=".ServiceBooking"
             android:exported="false" />
@@ -26,24 +28,31 @@
             android:name=".ServiceDetails"
             android:exported="false" />
         <activity
-            android:name=".PostDetailActivity"
+            android:name=".thread.CreateNewThreadPost"
+            android:exported="false" />
+        <activity
+            android:name=".thread.ThreadDisplay"
+            android:exported="false" />
+        <activity
+            android:name=".post.PostDetailActivity"
             android:exported="false"
             android:label="@string/title_activity_home2" />
+
         <activity
             android:name=".HomeActivity2"
             android:exported="false"
             android:label="@string/title_activity_home2" />
         <activity
-            android:name=".ProfileSetupDetails"
+            android:name=".profileSetUp.ProfileSetupDetails"
             android:exported="false" />
         <activity
-            android:name=".ProfileSetup"
+            android:name=".profileSetUp.ProfileSetup"
             android:exported="false" />
         <activity
             android:name=".Services"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".onboardingAndSplash.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,19 +61,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CreateAccount"
+            android:name=".getStartedAccountsCreation.CreateAccount"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".getStartedAccountsCreation.Login"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".onboardingAndSplash.MainActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".GetStarted" />
+        <activity android:name=".getStartedAccountsCreation.GetStarted" />
         <activity android:name=".SocialBanner" />
 
         <meta-data

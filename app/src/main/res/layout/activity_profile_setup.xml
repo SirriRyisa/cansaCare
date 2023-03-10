@@ -4,11 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileSetup"
+    tools:context=".profileSetUp.ProfileSetup"
     android:layout_marginTop="10dp"
     android:padding="10dp"
     >
+<RadioGroup
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="parent">
 
+</RadioGroup>
     <TextView
         android:id="@+id/profile_heading"
         android:layout_width="wrap_content"
@@ -84,13 +89,14 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/hopefulCategoryHeading"
                 />
-            <com.google.android.material.radiobutton.MaterialRadioButton
+            <RadioButton
                 android:id="@+id/hopefulRadioBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Hopeful"/>
 
             <TextView
                 android:id="@+id/hopefulCategoryHeading"
@@ -152,10 +158,11 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/fighterCategoryHeading"
                 />
-            <com.google.android.material.radiobutton.MaterialRadioButton
+            <RadioButton
                 android:id="@+id/fighterRadioBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Fighter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -219,10 +226,11 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/survivorCategoryHeading"
                 />
-            <com.google.android.material.radiobutton.MaterialRadioButton
+            <RadioButton
                 android:id="@+id/survivorRadioBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Survivor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -262,10 +270,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-
-
-
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/next_progress_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -274,11 +279,9 @@
         app:layout_constraintTop_toBottomOf="@id/survivorCardView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        />
-
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/skip_progress_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -289,13 +292,6 @@
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         app:strokeColor="@color/primary_color"
         app:strokeWidth="1dp"
-        android:textColor="@color/primary_color"
-
-        />
-
-
-
-
-
+        android:textColor="@color/primary_color" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

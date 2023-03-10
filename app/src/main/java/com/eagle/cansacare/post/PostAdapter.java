@@ -1,4 +1,4 @@
-package com.eagle.cansacare;
+package com.eagle.cansacare.post;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.eagle.cansacare.R;
 
 import java.util.List;
 
@@ -39,7 +41,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder>{
 
     @Override
     public int getItemCount() {
-
         return mList.size();
     }
 
@@ -47,14 +48,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder>{
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView txtViewCaption, txtViewDescription;
-//        ImageView postImg;
+        ImageView postImg;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             txtViewCaption = itemView.findViewById(R.id.post_caption);
 //            txtViewDescription = itemView.findViewById(R.id.post_description);
-//            postImg = itemView.findViewById(R.id.post_image);
+            postImg = itemView.findViewById(R.id.post_image);
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
