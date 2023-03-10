@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Services">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/blue_bg"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:cardBackgroundColor="@color/secondary_color"
+        app:contentPadding="10dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/back_arrow_booking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="send_back_button"
+                android:src="@drawable/ic_back_arrow_black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/service_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="41dp"
+                android:gravity="top"
+                android:text="What service do you need ?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/back_arrow_booking"
+              />
+
+            <TextView
+                android:id="@+id/heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginBottom="30dp"
+                android:elevation="41dp"
+                android:gravity="top"
+                android:text="Book a service"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/service_heading" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:searchIcon="@drawable/ic_search"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/back_arrow_booking"
+                app:layout_constraintBottom_toBottomOf="@id/back_arrow_booking"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/round_back_white"
+                android:elevation="41dp"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/heading">
+
+                <TextView
+                    android:id="@+id/services_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/rounded_tab_colour"
+                    android:gravity="center"
+                    android:text="Services"
+                    android:textColor="@color/dark_primary_color"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/appointments_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1.5"
+                    android:gravity="center"
+                    android:text="Appointments"
+                    android:textColor="@color/dark_primary_color"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blue_bg"
+        tools:layout="@layout/fragment_services"
+        tools:layout_editor_absoluteX="0dp" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
