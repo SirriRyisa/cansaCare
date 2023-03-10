@@ -1,4 +1,4 @@
-package com.eagle.cansacare;
+package com.eagle.cansacare.thread;
 
 public class ThreadPost {
 

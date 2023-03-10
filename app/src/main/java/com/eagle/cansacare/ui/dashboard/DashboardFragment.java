@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import com.eagle.cansacare.R;
-import com.eagle.cansacare.ThreadDisplay;
+import com.eagle.cansacare.thread.ThreadDisplay;
 public class DashboardFragment extends Fragment {
 
     CardView mainThread, cervicalCancer,breastCancer,prostateCancer;
