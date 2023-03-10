@@ -66,16 +66,16 @@ public class ThreadDisplay extends AppCompatActivity {
 
         });
 
-        goBackButton =findViewById(R.id.send_back_thread);
+        goBackButton = findViewById(R.id.send_back_thread);
         goBackButton.setOnClickListener(v -> {
             Intent intent = new Intent(this, HomeActivity2.class);
             intent.putExtra("goToFragmentChannel", true);
             startActivity(intent);
         });
 
-        createPost =findViewById(R.id.create_new_post_thread);
+        createPost = findViewById(R.id.create_new_post_thread);
         createPost.setOnClickListener(v -> {
-            Intent intent = new Intent(ThreadDisplay.this,CreateNewThreadPost.class);
+            Intent intent = new Intent(ThreadDisplay.this, CreateNewThreadPost.class);
             startActivity(intent);
         });
     }

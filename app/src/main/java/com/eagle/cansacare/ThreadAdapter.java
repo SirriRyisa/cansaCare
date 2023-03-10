@@ -1,8 +1,7 @@
 package com.eagle.cansacare;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +11,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Collections;
-import java.util.Comparator;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.List;
+import java.util.Objects;
 
 public class ThreadAdapter extends RecyclerView.Adapter<ThreadAdapter.ThreadViewHolder>{
 
