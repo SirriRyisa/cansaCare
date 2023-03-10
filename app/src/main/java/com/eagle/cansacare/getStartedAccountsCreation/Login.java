@@ -36,8 +36,8 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_layout);
-        firebaseAuth=FirebaseAuth.getInstance();
-        progressDialog=new ProgressDialog(this);
+        firebaseAuth = FirebaseAuth.getInstance();
+        progressDialog = new ProgressDialog(this);
 
 
         View loginBackArrowBtn = findViewById(R.id.back_arrow);
@@ -45,7 +45,6 @@ public class Login extends AppCompatActivity {
             Intent previousScreen = new Intent(Login.this, GetStarted.class);
             startActivity(previousScreen);
         });
-
 
 
         MaterialButton loginBtn = findViewById(R.id.loginBtn);
@@ -61,7 +60,7 @@ public class Login extends AppCompatActivity {
             String password = passwordTextView.getText().toString();
 
             progressDialog.show();
-            firebaseAuth.signInWithEmailAndPassword(email,password)
+            firebaseAuth.signInWithEmailAndPassword(email, password)
                     .addOnSuccessListener(authResult -> {
                         startActivity(new Intent(Login.this, ProfileSetup.class));
                         progressDialog.cancel();
@@ -71,11 +70,11 @@ public class Login extends AppCompatActivity {
 
                     .addOnFailureListener(e -> {
                         Toast.makeText(Login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                            progressDialog.cancel();
+                        progressDialog.cancel();
                     });
         });
 
-        googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
 
@@ -83,12 +82,11 @@ public class Login extends AppCompatActivity {
 
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
 
-        if(account != null)
-        {
+        if (account != null) {
 
-              String Email = account.getEmail();
+            String Email = account.getEmail();
 
-              emailTextView.setText(Email);
+            emailTextView.setText(Email);
 
         }
 
@@ -100,22 +98,18 @@ public class Login extends AppCompatActivity {
             firebaseAuth.sendPasswordResetEmail(email)
                     .addOnSuccessListener(unused -> {
                         progressDialog.cancel();
-                        Toast.makeText(Login.this,"Email Sent", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "Email Sent", Toast.LENGTH_SHORT).show();
 
                     })
                     .addOnFailureListener(e -> {
                         progressDialog.cancel();
-                        Toast.makeText(Login.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     });
-
 
 
         });
 
         goToSignup.setOnClickListener(v -> startActivity(new Intent(Login.this, CreateAccount.class)));
-
-
-
 
 
     }
