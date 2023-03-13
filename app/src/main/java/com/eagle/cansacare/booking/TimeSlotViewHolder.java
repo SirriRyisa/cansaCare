@@ -11,7 +11,10 @@ import com.google.android.material.button.MaterialButton;
 
 public class TimeSlotViewHolder extends RecyclerView.ViewHolder {
 
-        private final RadioButton timeSlotbtn;
+//        private final RadioButton timeSlotbtn;
+
+
+        RadioButton timeSlotbtn;
 
         public TimeSlotViewHolder(@NonNull View itemView) {
             super(itemView);

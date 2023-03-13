@@ -27,7 +27,7 @@ public class SplashScreen extends AppCompatActivity {
             // Start the next activity
 
 
-//            if a new user opens it they go through the onboarding if the user has an account skip the onboarding
+//            if a new user opens it they go through the on-boarding if the user has an account skip the on-boarding
             if (firebaseUser == null){
                 Intent displaySplash = new Intent(SplashScreen.this, MainActivity.class);
                 startActivity(displaySplash);

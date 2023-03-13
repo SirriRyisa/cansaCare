@@ -258,7 +258,7 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/loginBtn"
+            android:id="@+id/bookingBtn"
             android:layout_width="300dp"
             android:layout_marginTop="@dimen/activity_margin_large"
             android:layout_height="wrap_content"

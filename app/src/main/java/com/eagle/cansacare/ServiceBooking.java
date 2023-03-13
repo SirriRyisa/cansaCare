@@ -1,6 +1,7 @@
 package com.eagle.cansacare;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,12 +10,18 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.CalendarView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eagle.cansacare.booking.DoctorSchedule;
 import com.eagle.cansacare.booking.TimeSlotAdapter;
+import com.eagle.cansacare.getStartedAccountsCreation.GetStarted;
+import com.eagle.cansacare.getStartedAccountsCreation.Login;
+import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,7 +49,14 @@ public class ServiceBooking extends AppCompatActivity {
 
     DoctorSchedule doctorSchedule;
 
+//    public  TextView serviceName;
+//
+//    public  TextView serviceRole;
+//
+//    private String selectedDay;
+//    private String selectedTimeSlot;
     List<String> timeSlots = new ArrayList<>();
+
 
 
     @Override
@@ -60,6 +74,7 @@ public class ServiceBooking extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(timeSlotAdapter);
+
 
 
         database.addValueEventListener(new ValueEventListener() {
@@ -110,6 +125,49 @@ public class ServiceBooking extends AppCompatActivity {
             showAvailableTimeSlots(day);
 
         });
+//
+        MaterialButton bookingbttn  = findViewById(R.id.bookingBtn);
+        bookingbttn.setOnClickListener(view -> {
+////         Get the current user's Name
+//            String userId = Objects.requireNonNull(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
+//
+//            Log.e("USER", userId);
+//
+////         Generate a new ID for the post
+//            String appointmentId = database.push().getKey();
+//
+////         Get the current date
+//            String date = calendar.getText().toString();
+//            // Get the current time
+//            String time = timeSlots.getText().toString();
+////         Get the current doctorName
+//            String doctorName = displayName.getText().toString();
+////         Get the current userId
+////            String userId = postEditText.getText().toString();
+//
+////         Create a new Post object with the generated ID, current user's ID, post text, and timestamp
+//            AppointmentData appointmentData = new AppointmentData(appointmentId, date, time, doctorName);
+////        postId, PatientName, postContent, postTime, 0
+////         Save the post to the Realtime Database
+//            assert appointmentId != null;
+//            database.child(appointmentId).setValue(appointmentData);
+//
+//            Toast.makeText(ServiceBooking.this, "Post published !", Toast.LENGTH_SHORT).show();
+//
+//
+//            //            getting the data for the specific item selected to move to the
+//
+//
+//         Finish the activity and go the activity of confirming the appointment
+            Intent book = new Intent(ServiceBooking.this,ConfirmedBooking.class);
+//            book.putExtra("DisplayName",servicesList.getDisplayName());
+//            book.putExtra("title",servicesList.getTitle());
+//            book.putExtra("schedule",servicesList.getSchedule());
+            startActivity(book);
+//            finish();
+//
+        });
+
     }
 
 
@@ -165,4 +223,12 @@ void showAvailableTimeSlots(String day){
             Toast.makeText(this, "No slots available", Toast.LENGTH_SHORT).show();
         }
     }
+
+
+
 }
+
+
+
+
+
