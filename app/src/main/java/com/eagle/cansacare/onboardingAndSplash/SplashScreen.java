@@ -15,33 +15,28 @@ import com.google.firebase.auth.FirebaseUser;
 @SuppressLint("CustomSplashScreen")
 public class SplashScreen extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         // Delay the splash screen by 3 seconds
-            // Start the next activity
 
 
-//            if a new user opens it they go through the on-boarding if the user has an account skip the on-boarding
+        new Handler().postDelayed((Runnable) () -> {
 
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-            new Handler().postDelayed((Runnable) () -> {
+            if (user != null){
+                Intent displaySplash = new Intent(SplashScreen.this, HomeActivity2.class);
+                startActivity(displaySplash);
+            }else {
+                Intent displaySplash = new Intent(SplashScreen.this, MainActivity.class);
+                startActivity(displaySplash);
+            }
 
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-                if (user != null) {
-                    Intent displaySplash = new Intent(SplashScreen.this, HomeActivity2.class);
-                    startActivity(displaySplash);
-                } else {
-                    Intent displaySplash = new Intent(SplashScreen.this, MainActivity.class);
-                    startActivity(displaySplash);
-                }
-
-                // Close the splash screen activity
-                finish();
-            }, 3000);
-
-        }
+            // Close the splash screen activity
+            finish();
+        }, 3000);
     }
+}
+
