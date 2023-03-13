@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,24 +15,37 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.eagle.cansacare.post.Post;
 import com.eagle.cansacare.ui.dashboard.DashboardFragment;
 import com.eagle.cansacare.ui.home.HomeFragment;
-//import com.eagle.cansacare.ui.bookings.BookingFragment;
+import com.eagle.cansacare.ui.bookings.BookingFragment;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.util.UUID;
 
 public class HomeActivity2 extends AppCompatActivity {
+
 
     private static final int REQUESCODE = 1;
     //    private ActivityHome2Binding binding;
@@ -55,6 +69,8 @@ public class HomeActivity2 extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
+//        setupNewsPostImage();
+
 //         iniNewsfeed();
 //        ImageView image = findViewById(R.id.dummy_image);
 //
@@ -66,6 +82,8 @@ public class HomeActivity2 extends AppCompatActivity {
             public void onClick(View v) {
 //                popAddComment.show();
                 iniNewsfeed();
+
+                setupNewsPostImage();
             }
         });
 
@@ -103,7 +121,8 @@ public class HomeActivity2 extends AppCompatActivity {
             } else if (menuSelectedId == R.id.navigation_dashboard) {
                 fragment = new DashboardFragment();
             } else {
-                fragment = new DashboardFragment();
+                fragment = new BookingFragment();
+
             }
 
             performFragmentTransaction(fragment);
@@ -125,6 +144,8 @@ public class HomeActivity2 extends AppCompatActivity {
         popupAddBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                checkAndRequestCameraPermission();
 
 //                ImagePickerView.Builder()
 //                        .setup {
@@ -170,8 +191,9 @@ public class HomeActivity2 extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode == RESULT_OK && resultCode == REQUESCODE && data != null) {
+        if(resultCode == RESULT_OK && data != null) {
             pickedImgUrl = data.getData();
+            newsPostImage.setImageURI(pickedImgUrl);
         }
     }
 
@@ -197,60 +219,59 @@ public class HomeActivity2 extends AppCompatActivity {
         postProgressBar = view.findViewById(R.id.progress_bar);
 
         //Add firebase profile image
-//        Picasso.get().load("https://i.imgur.com/DvpvklR.png").into(newsPostImage);
+//      Picasso.get().load("https://i.imgur.com/DvpvklR.png").into(newsPostImage);
+        Glide.with(this).load(pickedImgUrl).into(newsPostImage);
 
 //        Add post Listener
 
-        popupAddBtn.setOnClickListener(new View.OnClickListener() {
+       newsPostImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 popupAddBtn.setVisibility(View.INVISIBLE);
                 postProgressBar.setVisibility(View.VISIBLE);
 
                 if (!postTitle.getText().toString().isEmpty()
-                        && !postDescription.getText().toString().isEmpty()) {
-
+                        && !postDescription.getText().toString().isEmpty()
+                        && pickedImgUrl != null) {
 
                     String title = postTitle.getText().toString().trim();
                     String message = postDescription.getText().toString().trim();
+//                    String picture = newsPostImage.toString();
 
-                    Post post = new Post(title, message, "2");
-                    addPost(post);
+//
 
-//                    StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Document");
-//
-////                    final StorageReference imageFilePath = storageReference.child(pickedImgUrl.getLastPathSegment());
-//                    final StorageReference filePath = storageReference.child(postTitle.getText().toString());
-//                    filePath.putFile(Uri.parse(postTitle.getText().toString())).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                        @Override
-//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//                            filePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//                                @Override
-//                                public void onSuccess(Uri uri) {
-////                                    String imageDownloadLink = uri.toString();
-//
-//                                    Post post = new Post(postTitle.getText().toString(),
-//                                            postDescription.getText().toString(),
-//                                            currentUser.getPhotoUrl().toString());
-//
-//                                    addPost(post);
-//                                }
-//                            }).addOnFailureListener(new OnFailureListener() {
-//                                @Override
-//                                public void onFailure(@NonNull Exception e) {
-//                                    showMessage(e.getMessage());
-//                                    popupAddBtn.setVisibility(View.INVISIBLE);
-//                                    postProgressBar.setVisibility(View.VISIBLE);
-//
-//                                }
-//                            });
-//
-//                        }
-//                    });
+                    String image = UUID.randomUUID().toString() + ".png";
+                    StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("images/"+image);
 
+                    storageReference.putFile(pickedImgUrl).continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                                @Override
+                                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                                    if (!task.isSuccessful()) {
+                                        throw task.getException();
+                                    }
+
+                                    // Continue with the task to get the download URL
+                                    return storageReference.getDownloadUrl();
+                                }
+                            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Uri> task) {
+                            if (task.isSuccessful()) {
+                                Uri downloadUri = task.getResult();
+                                Post post = new Post(title, message, currentUser.getUid(), downloadUri.toString());
+                                addPost(post);
+
+                            } else {
+
+                            }
+
+                        }
+                    });
+
+//
 
                 } else {
-                    showMessage("Please a field in the title and description");
+                    showMessage("Please verify all input field have description and choose post image");
                     popupAddBtn.setVisibility(View.VISIBLE);
                     postProgressBar.setVisibility(View.INVISIBLE);
                 }

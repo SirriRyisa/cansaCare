@@ -12,16 +12,18 @@ public class Post {
     private String userId;
     private Object timeStamp;
     private String key;
+    private String picture;
 
     //This method(empty constructor) is required by firebase to marshalled or assemble to create a new instance of this class when firebase is triggered
     public Post() {
     }
 
-    public Post(String title, String description, String userId) {
+    public Post(String title, String description, String userId, String picture) {
         this.title = title;
         this.description = description;
         this.userId = userId;
         this.timeStamp = ServerValue.TIMESTAMP;
+        this.picture = picture;
     }
 
     public String getTitle() {
@@ -73,6 +75,14 @@ public class Post {
         this.key = key;
     }
 
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
     @Exclude
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
@@ -80,6 +90,7 @@ public class Post {
         result.put("description", description);
         result.put("userId", userId);
         result.put("timeStamp", timeStamp);
+        result.put("picture", picture);
         return result;
     }
 

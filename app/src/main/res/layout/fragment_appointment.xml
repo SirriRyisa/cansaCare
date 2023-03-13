@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AppointmentFragment"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+>
+
+        <TextView
+            android:id="@+id/appointmentsHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upcoming"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/upcomingAppointmentsCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 upcoming appointments"
+            app:layout_constraintTop_toBottomOf="@id/appointmentsHeading"
+            android:drawableLeft="@drawable/ic_colored_notifications"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/primary_color"
+
+            />
+
+<!--        <View-->
+<!--            android:id="@+id/appointmentDivider"-->
+<!--            app:layout_constraintStart_toStartOf="1000dp"-->
+<!--            app:layout_constraintEnd_toEndOf="1000dp"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/upcomingAppointmentsCounter"-->
+<!--            android:layout_marginEnd="@dimen/margin_small"-->
+<!--            android:background="@color/divider_color"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="1dp" />-->
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/hopefulCardView"
+            app:layout_constraintTop_toBottomOf="@id/upcomingAppointmentsCounter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/imageViewIcon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/ic_launcher"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"  />
+
+                <ImageView
+                    android:id="@+id/heartIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/iconmonstr_heart_thin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:text="Dr. Lawrence Agyei"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/heartIcon"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewIcon"
+                    app:layout_constraintTop_toTopOf="@+id/imageViewIcon" />
+
+                <TextView
+                    android:id="@+id/textViewSubTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Dietician"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toStartOf="@+id/heartIcon"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewTitle"/>
+
+                <TextView
+                    android:id="@+id/hopefulCategoryBody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/you_have_a_family_history_of_cancer_showing_symptoms_of_a_cancer_or_has_genuine_concern_for_cancer_diagnosed_patients"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textViewSubTitle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

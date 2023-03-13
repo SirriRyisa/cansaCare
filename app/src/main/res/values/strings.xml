@@ -12,8 +12,8 @@
     <string name="title_activity_home2">HomeActivity2</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-
+    <string name="title_booking">Booking</string>
+    <string name="title_profile">Profile</string>
     <string name="my_text">This is an <u>underline</u>.</string>
 
     <!--    Blog description-->
@@ -47,6 +47,22 @@
 
     <string name="already_have_an_account">Already have an account?</string>
     <string name="you_have_a_family_history_of_cancer_showing_symptoms_of_a_cancer_or_has_genuine_concern_for_cancer_diagnosed_patients">You have a family history of cancer, showing symptoms of a cancer, or has genuine concern for cancer diagnosed patients</string>
+
+    <string name="search">search</string>
+    <string name="booking">Booking</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_service_detail">ServiceDetail</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="serviceName">Dr. Lawrence Agyei</string>
+    <string name="serviceTitle">Dietician</string>
+
     <string name="thread">Threads</string>
     <string name="main_thread">#Main thread</string>
     <string name="curious_thread">Curious thread</string>
@@ -64,5 +80,6 @@
     <string name="share_with_the_community">Share with the community</string>
     <string name="edit_text_hint">Share freely your thoughts with the community and support your pairs</string>
     <string name="post_send">Share</string>
+
 
 </resources>

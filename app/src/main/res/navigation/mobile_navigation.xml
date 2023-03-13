@@ -19,7 +19,13 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.eagle.cansacare.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:name="com.eagle.cansacare.ui.bookings.BookingFragment"
+        android:label="Booking"
+        tools:layout="@layout/fragment_booking" />
+
+    <fragment
+        android:id="@+id/navigation_personalProfile"
+        android:name="com.eagle.cansacare.ui.bookings.BookingFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

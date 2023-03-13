@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ServiceBooking">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/blue_bg"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:cardBackgroundColor="@color/secondary_color"
+        app:contentPadding="20dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/back_arrow_booking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="send_back_button"
+                android:src="@drawable/ic_back_arrow_black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/service_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="41dp"
+                android:gravity="top"
+                android:text="Dr Martin Agyei"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/back_arrow_booking"
+                app:layout_constraintTop_toBottomOf="@id/back_arrow_booking"
+                />
+
+            <TextView
+                android:id="@+id/heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="41dp"
+                android:text="Oncologist"
+                android:textColor="@color/white"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@id/back_arrow_booking"
+                app:layout_constraintTop_toBottomOf="@id/service_heading"
+                />
+            <ImageView
+                android:id="@+id/imageViewIcon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/ic_launcher"
+                android:contentDescription="@string/app_name"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="@id/back_arrow_booking"
+                app:layout_constraintTop_toBottomOf="@+id/heading" />
+
+            <TextView
+                android:id="@+id/specialtyHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Specialty:"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/imageViewIcon"
+                app:layout_constraintTop_toTopOf="@id/imageViewIcon"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                />
+            <LinearLayout
+                android:id="@+id/specialtySubheading"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@id/specialtyHeading"
+                app:layout_constraintTop_toTopOf="@id/specialtyHeading"
+                >
+
+                <TextView
+                    android:id="@+id/specialtySubheadingItemOne"
+                    android:text="Cervical Cancer "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:id="@+id/specialtySubheadingItemTwo"
+                    android:text="Pediatrics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                  />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/bookingOption"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/blue_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="10dp"
+        android:background="@color/light_grey"
+        >
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/videoAppointmentRadioBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/videoAppointment"
+            android:text="Video appointment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+
+            />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/inHouseRadioBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/inHouseAppointment"
+            android:text="In-house appointment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/availabilityHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/bookingOption"
+        android:text="Availability"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="30dp"
+        />
+    <TextView
+        android:id="@+id/availabilitySubHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/availabilityHeading"
+        android:text="Select appointment date and time"
+        android:textStyle="normal"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/availabilityHeading"
+
+        />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/calenderCardView"
+        app:layout_constraintTop_toBottomOf="@id/availabilitySubHeading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+
+        <CalendarView
+            android:id="@+id/calendar_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:firstDayOfWeek="1"
+            android:maxDate="12/31/2023"
+            android:minDate="01/01/2021"
+            />
+    </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/timeCardView"
+            app:layout_constraintTop_toBottomOf="@id/calenderCardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            >
+
+            <LinearLayout
+                android:id="@+id/timeAvailability"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@id/specialtyHeading"
+                app:layout_constraintTop_toTopOf="@id/specialtyHeading"
+                >
+
+                <TextView
+                    android:id="@+id/timeOptionOne"
+                    android:text="9:00am - 10:00am"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:id="@+id/timeOptionTwo"
+                    android:text="12:30pm - 13:30pm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:id="@+id/timeOptionThree"
+                    android:text="14:30pm -  15:30pm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/timeOptionFour"
+                    android:text="16:30pm -  17:30pm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
