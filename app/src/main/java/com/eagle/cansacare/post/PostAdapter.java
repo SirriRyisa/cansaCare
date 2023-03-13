@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.eagle.cansacare.R;
 
 import java.util.List;
@@ -37,6 +38,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder>{
         holder.txtViewCaption.setText(mList.get(position).getTitle());
 //        holder.txtViewDescription.setText(mList.get(position).getDescription());
 
+        holder.bindData(mList.get(position));
     }
 
     @Override
@@ -47,8 +49,16 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder>{
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
+        public static final String STORAGE_BASE_URL = "https://firebasestorage.googleapis.com/v0/b/cansacare.appspot.com/o";
+
         TextView txtViewCaption, txtViewDescription;
         ImageView postImg;
+
+
+        void bindData(Post post){
+//            String imageUrl = STORAGE_BASE_URL + post.getPicture();
+            Glide.with(itemView.getContext()).load(post.getPicture()).into(postImg);
+        }
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -56,6 +66,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder>{
             txtViewCaption = itemView.findViewById(R.id.post_caption);
 //            txtViewDescription = itemView.findViewById(R.id.post_description);
             postImg = itemView.findViewById(R.id.post_image);
+
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
