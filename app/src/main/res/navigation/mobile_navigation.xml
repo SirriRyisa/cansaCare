@@ -18,7 +18,7 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_booking"
         android:name="com.eagle.cansacare.ui.bookings.BookingFragment"
         android:label="Booking"
         tools:layout="@layout/fragment_booking" />

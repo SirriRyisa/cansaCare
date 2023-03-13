@@ -29,14 +29,20 @@ public class ServicesFragment extends Fragment {
     RecyclerView recyclerView;
     ServicesAdapter servicesAdapter;
 
+
+
+//
     private final List<ServicesList> servicesLists = new ArrayList<>();
     DatabaseReference database;
 
+    private static final String TAG = "ServicesFragment";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+//        getting data from the doctors model in firebase
         database = FirebaseDatabase.getInstance().getReference("doctors");
 
 
@@ -60,6 +66,7 @@ public class ServicesFragment extends Fragment {
         servicesAdapter = new ServicesAdapter(servicesLists);
         recyclerView.setAdapter(servicesAdapter);
 
+//        getting data from the doctors model in firebase
         database = FirebaseDatabase.getInstance().getReference("doctors");
 
 
@@ -68,8 +75,14 @@ public class ServicesFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 servicesLists.clear();
+
+//                getting (displayName and title ) from the doctors model and attaching it to the recycler view
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     ServicesList serviceList = dataSnapshot.getValue(ServicesList.class);
+
+//                    getting the schedule from firebase
+                    assert serviceList != null;
+                    Log.d(TAG, serviceList.getSchedule().toString());
                     servicesLists.add(serviceList);
 
                 }
