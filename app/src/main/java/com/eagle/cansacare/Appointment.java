@@ -8,6 +8,12 @@ public class Appointment {
     private String doctorName;
     private String userId;
 
+    public Appointment(String appointmentId, String time, String doctorName) {
+        this.appointmentId = appointmentId;
+        this.time = time;
+        this.doctorName = doctorName;
+    }
+
     public class appointment {
 
     }

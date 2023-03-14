@@ -24,12 +24,22 @@
         android:id="@+id/timeSlotbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/time"
-        android:layout_margin="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textColor="@color/secondary_color"
     />
+
+    <TextView
+        android:id="@+id/timeSlottext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time"
+        app:layout_constraintStart_toEndOf="@id/timeSlotbtn"
+        app:layout_constraintTop_toTopOf="@id/timeSlotbtn"
+        app:layout_constraintBottom_toBottomOf="@id/timeSlotbtn"
+
+
+        />
 
 
 

@@ -10,13 +10,13 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.CalendarView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eagle.cansacare.booking.DoctorSchedule;
+import com.eagle.cansacare.booking.TimeSlot;
 import com.eagle.cansacare.booking.TimeSlotAdapter;
 import com.eagle.cansacare.getStartedAccountsCreation.GetStarted;
 import com.eagle.cansacare.getStartedAccountsCreation.Login;
@@ -36,7 +36,7 @@ import java.util.Objects;
 
 public class ServiceBooking extends AppCompatActivity {
 
-//    RecyclerView recyclerView;
+    //    RecyclerView recyclerView;
     TimeSlotAdapter timeSlotAdapter;
 
     public TextView DisplayNameHeading;
@@ -45,18 +45,18 @@ public class ServiceBooking extends AppCompatActivity {
     DatabaseReference database;
 
 
-    String[] days = new String[] { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+    // variables of the calendar
+    String[] days = new String[]{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
     DoctorSchedule doctorSchedule;
 
-//    public  TextView serviceName;
+    //    public  TextView serviceName;
 //
 //    public  TextView serviceRole;
 //
 //    private String selectedDay;
 //    private String selectedTimeSlot;
     List<String> timeSlots = new ArrayList<>();
-
 
 
     @Override
@@ -74,7 +74,6 @@ public class ServiceBooking extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(timeSlotAdapter);
-
 
 
         database.addValueEventListener(new ValueEventListener() {
@@ -101,13 +100,13 @@ public class ServiceBooking extends AppCompatActivity {
         serviceTitle = findViewById(R.id.heading);
 
 
-//        Retrieve data from the previous activity (ServiceFragment)
+//      Retrieve data from the previous activity (ServiceFragment)
         Intent intent = getIntent();
         String displayName = intent.getStringExtra("DisplayName");
         String title = intent.getStringExtra("title");
         doctorSchedule = (DoctorSchedule) intent.getSerializableExtra("schedule");
 
-//        Display the retrieved data in booking activity layout
+//      Display the retrieved data in booking activity layout
         DisplayNameHeading.setText(displayName);
         serviceTitle.setText(title);
 
@@ -126,27 +125,33 @@ public class ServiceBooking extends AppCompatActivity {
 
         });
 //
-        MaterialButton bookingbttn  = findViewById(R.id.bookingBtn);
+        MaterialButton bookingbttn = findViewById(R.id.bookingBtn);
         bookingbttn.setOnClickListener(view -> {
-////         Get the current user's Name
-//            String userId = Objects.requireNonNull(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
+
+            RadioButton timeSlotbtn = null;
+
+//         Generate a new ID for the appointment
+            String appointmentId = database.push().getKey();
+
+//         Get the current date
+//            String date = day.getText().toString();
+
+//          Get the current time (cananot be !null cause it's not a string)
+            assert timeSlotbtn != null;
+            String time = timeSlotbtn.getText().toString();
+
+//         Get the current doctorName
+            String doctorName = getIntent().getStringExtra("DisplayName");
 //
-//            Log.e("USER", userId);
-//
-////         Generate a new ID for the post
-//            String appointmentId = database.push().getKey();
-//
-////         Get the current date
-//            String date = calendar.getText().toString();
-//            // Get the current time
-//            String time = timeSlots.getText().toString();
-////         Get the current doctorName
-//            String doctorName = displayName.getText().toString();
-////         Get the current userId
-////            String userId = postEditText.getText().toString();
-//
-////         Create a new Post object with the generated ID, current user's ID, post text, and timestamp
-//            AppointmentData appointmentData = new AppointmentData(appointmentId, date, time, doctorName);
+//         Create a new appointment object with the generated ID, appointment date & time,
+            Appointment appointmentData = new Appointment(appointmentId, time, doctorName);
+
+
+            Log.e("USER", appointmentId);
+            Log.e("USER", time);
+            Log.e("USER", doctorName);
+
+
 ////        postId, PatientName, postContent, postTime, 0
 ////         Save the post to the Realtime Database
 //            assert appointmentId != null;
@@ -159,7 +164,7 @@ public class ServiceBooking extends AppCompatActivity {
 //
 //
 //         Finish the activity and go the activity of confirming the appointment
-            Intent book = new Intent(ServiceBooking.this,ConfirmedBooking.class);
+            Intent book = new Intent(ServiceBooking.this, ConfirmedBooking.class);
 //            book.putExtra("DisplayName",servicesList.getDisplayName());
 //            book.putExtra("title",servicesList.getTitle());
 //            book.putExtra("schedule",servicesList.getSchedule());
@@ -171,42 +176,42 @@ public class ServiceBooking extends AppCompatActivity {
     }
 
 
-//    Getting the times slots allocated to the days of the week from firebase
-@SuppressLint("NotifyDataSetChanged")
-void showAvailableTimeSlots(String day){
+    //    Getting the times slots allocated to the days of the week from firebase
+    @SuppressLint("NotifyDataSetChanged")
+    void showAvailableTimeSlots(String day) {
 
         String availableTimes = null;
 
-        if (Objects.equals(day, days[0])){
+        if (Objects.equals(day, days[0])) {
             availableTimes = doctorSchedule.Sunday;
         }
 
-        if (Objects.equals(day, days[1])){
+        if (Objects.equals(day, days[1])) {
             availableTimes = doctorSchedule.Monday;
         }
 
-        if (Objects.equals(day, days[2])){
+        if (Objects.equals(day, days[2])) {
             availableTimes = doctorSchedule.Tuesday;
         }
 
-        if (Objects.equals(day, days[3])){
+        if (Objects.equals(day, days[3])) {
             availableTimes = doctorSchedule.Wednesday;
         }
 
-        if (Objects.equals(day, days[4])){
+        if (Objects.equals(day, days[4])) {
             availableTimes = doctorSchedule.Thursday;
         }
 
-        if (Objects.equals(day, days[5])){
+        if (Objects.equals(day, days[5])) {
             availableTimes = doctorSchedule.Friday;
         }
 
-        if (Objects.equals(day, days[6])){
+        if (Objects.equals(day, days[6])) {
             availableTimes = doctorSchedule.Saturday;
         }
 
 
-//if multiple times  are placed on one day separate them and make it a list
+// if multiple times  are placed on one day separate them and make it a list
         if (availableTimes != null) {
             String[] slots = availableTimes.split(",");
 
@@ -219,11 +224,10 @@ void showAvailableTimeSlots(String day){
 
 
 //If no time slot is available show a message
-        }else {
+        } else {
             Toast.makeText(this, "No slots available", Toast.LENGTH_SHORT).show();
         }
     }
-
 
 
 }
