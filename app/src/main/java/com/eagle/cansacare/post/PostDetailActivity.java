@@ -26,6 +26,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -64,6 +65,8 @@ public class PostDetailActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         firebaseDatabase = FirebaseDatabase.getInstance();
+
+        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/cansacare.appspot.com/o/images%2F5352e345-51e0-470c-904b-b695b1ce74ea.png?alt=media&token=3823fc37-0b49-4fa9-b3ea-8963da77080d").into(blogImage);
 
 //        Adding comment button eventClickListener
 
@@ -108,6 +111,9 @@ public class PostDetailActivity extends AppCompatActivity {
         blogTxtDescription.setText(postDescription);
 
         PostKey = getIntent().getExtras().getString("postKey");
+        String image = getIntent().getExtras().getString("image");
+        Picasso.get().load(image).into(blogImage);
+
 
         String date = timeStampToString(getIntent().getExtras().getLong("postDate"));
         blogDateName.setText(date);

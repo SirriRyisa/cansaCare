@@ -9,7 +9,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tool_bar_chat"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:background="@drawable/toolbar_round_shape_chat"
         android:elevation="40dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:gravity="top"
-        android:text="Threat:"
+        android:text="@string/thread_greetings"
         android:textColor="@color/white"
         android:textSize="18sp" />
 
@@ -41,9 +41,19 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_margin="8dp"
-        android:text="Living with cancer"
+        android:text="Abena"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textStyle="bold" />
+
+    <SearchView
+        android:id="@+id/simpleSearchView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search Here"
+        app:layout_constraintTop_toBottomOf="@id/text_home_caption"
+        app:layout_constraintStart_toStartOf="@+id/text_home_caption"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

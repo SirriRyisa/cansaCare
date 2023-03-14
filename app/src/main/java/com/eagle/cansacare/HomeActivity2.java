@@ -41,6 +41,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.util.UUID;
 
@@ -76,6 +77,7 @@ public class HomeActivity2 extends AppCompatActivity {
 //
 //        Picasso.get().load("https://i.imgur.com/DvpvklR.png").into(image);
 
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.floating_bar);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,27 +90,7 @@ public class HomeActivity2 extends AppCompatActivity {
         });
 
         BottomNavigationView navView = findViewById(R.id.nav_view_home);
-//        navView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                int selectedItemId = item.getItemId();
-//                switch (selectedItemId) {
-//                    case R.id.navigation_dashboard:
-////                        getSupportFragmentManager().beginTransaction()
-////                            .setReorderingAllowed(true)
-////                            .add(R.id.nav_host_fragment_activity_home2, ExampleFragment.class, null)
-////                            .commit();
-//                        break;
-//                    case R.id.navigation_home: //we change the fragment here ;
-//                        break;
-//                    case R.id.navigation_notifications: //we change the fragment here ;
-//                        break;
-//
-//                }
-//                return true;
-//            }
-//        });
-//    }
+
         performFragmentTransaction(new HomeFragment());
 
         navView.setOnItemSelectedListener(item -> {
@@ -146,22 +128,6 @@ public class HomeActivity2 extends AppCompatActivity {
             public void onClick(View v) {
 
                 checkAndRequestCameraPermission();
-
-//                ImagePickerView.Builder()
-//                        .setup {
-//                    name { RESULT_NAME }
-//                    max { 5 }
-//                    title { "Image Picker" }
-//                    single { false }
-//                }
-//            .start(this)
-//                ImagePicker.Companion.with(HomeActivity2.this)
-//                        .crop()        //Crop image(Optional), Check Customization for more option
-//                        .cropOval()       //Allow dimmed layer to have a circle inside
-//                        .cropFreeStyle()     //Let the user to resize crop bounds
-//                        .galleryOnly()          //We have to define what image provider we want to use
-//                        .maxResultSize(1080, 1080, true) //Final image resolution will be less than 1080 x 1080(Optional)
-//                        .createIntent();
             }
         });
     }
@@ -169,6 +135,8 @@ public class HomeActivity2 extends AppCompatActivity {
     private void checkAndRequestCameraPermission() {
         if(ContextCompat.checkSelfPermission(HomeActivity2.this, android.Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(HomeActivity2.this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},
+//                    PReqCode);
             if(ActivityCompat.shouldShowRequestPermissionRationale(HomeActivity2.this, android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
                 Toast.makeText(HomeActivity2.this, "Please allow camera access", Toast.LENGTH_SHORT).show();
             }
@@ -194,6 +162,8 @@ public class HomeActivity2 extends AppCompatActivity {
         if(resultCode == RESULT_OK && data != null) {
             pickedImgUrl = data.getData();
             newsPostImage.setImageURI(pickedImgUrl);
+        }else{
+            Log.e("cancer","failed to get image");
         }
     }
 
@@ -211,7 +181,7 @@ public class HomeActivity2 extends AppCompatActivity {
         popAddComment.getWindow().getAttributes().gravity = Gravity.TOP;
 //
 //        ini news feed widgets
-        newsFeedUserImage = view.findViewById(R.id.block_image);
+        newsFeedUserImage = view.findViewById(R.id.post_image);
         newsPostImage = view.findViewById(R.id.blog_image_view);
         popupAddBtn = view.findViewById(R.id.image_in_image);
         postTitle = view.findViewById(R.id.title_edit_text);
@@ -219,8 +189,9 @@ public class HomeActivity2 extends AppCompatActivity {
         postProgressBar = view.findViewById(R.id.progress_bar);
 
         //Add firebase profile image
-//      Picasso.get().load("https://i.imgur.com/DvpvklR.png").into(newsPostImage);
-        Glide.with(this).load(pickedImgUrl).into(newsPostImage);
+
+//        Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/cansacare.appspot.com/o" + "/v0/b/cansacare.appspot.com/o/images/8523b024-8061-493f-ba74-01e1c9fa48ae.png").into(newsFeedUserImage);
+
 
 //        Add post Listener
 
@@ -238,8 +209,6 @@ public class HomeActivity2 extends AppCompatActivity {
                     String message = postDescription.getText().toString().trim();
 //                    String picture = newsPostImage.toString();
 
-//
-
                     String image = UUID.randomUUID().toString() + ".png";
                     StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("images/"+image);
 
@@ -247,7 +216,9 @@ public class HomeActivity2 extends AppCompatActivity {
                                 @Override
                                 public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
                                     if (!task.isSuccessful()) {
+                                        Log.e("cancer","failed to upload image");
                                         throw task.getException();
+
                                     }
 
                                     // Continue with the task to get the download URL
@@ -260,16 +231,15 @@ public class HomeActivity2 extends AppCompatActivity {
                                 Uri downloadUri = task.getResult();
                                 Post post = new Post(title, message, currentUser.getUid(), downloadUri.toString());
                                 addPost(post);
-
+                                Log.i("cancer","post added");
                             } else {
-
+                                Log.e("cancer","failed to upload image");
                             }
 
                         }
                     });
 
 //
-
                 } else {
                     showMessage("Please verify all input field have description and choose post image");
                     popupAddBtn.setVisibility(View.VISIBLE);
