@@ -24,7 +24,6 @@ import com.eagle.cansacare.thread.ThreadDisplay;
 public class BookingFragment extends Fragment {
 
 
-
     private TextView services, appointments;
 
     private int selectedTabNumber = 1;
@@ -37,7 +36,7 @@ public class BookingFragment extends Fragment {
 
 
         services = view.findViewById(R.id.services_tab);
-        appointments= view.findViewById(R.id.appointments_tab);
+        appointments = view.findViewById(R.id.appointments_tab);
 
         getChildFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
@@ -51,11 +50,9 @@ public class BookingFragment extends Fragment {
         return view;
 
 
+    }
 
-
-        }
-
-    private void selectTab(int tabNumber ) {
+    private void selectTab(int tabNumber) {
         TextView selectedTextView;
         TextView nonselectedServiceView;
         TextView nonselectedAppointmentView;
@@ -86,12 +83,12 @@ public class BookingFragment extends Fragment {
 
         float slideTo = (tabNumber - selectedTabNumber) * selectedTextView.getWidth();
 
-        TranslateAnimation translateAnimation = new TranslateAnimation(0,slideTo,0,0);
+        TranslateAnimation translateAnimation = new TranslateAnimation(0, slideTo, 0, 0);
         translateAnimation.setDuration(100);
 
-        if(selectedTabNumber == 1){
+        if (selectedTabNumber == 1) {
             services.startAnimation(translateAnimation);
-        }else {
+        } else {
             appointments.startAnimation(translateAnimation);
         }
         translateAnimation.setAnimationListener(new Animation.AnimationListener() {
