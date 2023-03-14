@@ -20,6 +20,12 @@
         android:theme="@style/Theme.CansaCare"
         tools:targetApi="33">
         <activity
+            android:name=".ConfirmAppointment"
+            android:exported="false" />
+        <activity
+            android:name=".BookingServiceAppointment"
+            android:exported="false" />
+        <activity
             android:name=".ConfirmedBooking"
             android:exported="false" />
         <activity

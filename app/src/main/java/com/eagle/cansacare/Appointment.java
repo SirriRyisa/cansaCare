@@ -5,17 +5,28 @@ public class Appointment {
     private String appointmentId;
     private String date;
     private String time;
+    private String type;
     private String doctorName;
     private String userId;
 
-    public Appointment(String appointmentId, String time, String doctorName) {
+
+    public Appointment(String appointmentId, String type, String date, String time) {
         this.appointmentId = appointmentId;
+        this.type = type;
+        this.date = date;
         this.time = time;
-        this.doctorName = doctorName;
     }
 
     public class appointment {
 
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getAppointmentId() {

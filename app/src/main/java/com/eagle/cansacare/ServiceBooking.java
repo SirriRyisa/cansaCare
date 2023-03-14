@@ -128,28 +128,24 @@ public class ServiceBooking extends AppCompatActivity {
         MaterialButton bookingbttn = findViewById(R.id.bookingBtn);
         bookingbttn.setOnClickListener(view -> {
 
-            RadioButton timeSlotbtn = null;
+//            RadioButton timeSlotbtn = null;
 
 //         Generate a new ID for the appointment
-            String appointmentId = database.push().getKey();
+//            String appointmentId = database.push().getKey();
 
 //         Get the current date
 //            String date = day.getText().toString();
 
 //          Get the current time (cananot be !null cause it's not a string)
-            assert timeSlotbtn != null;
-            String time = timeSlotbtn.getText().toString();
+//            assert timeSlotbtn != null;
+//            String time = timeSlotbtn.getText().toString();
 
 //         Get the current doctorName
-            String doctorName = getIntent().getStringExtra("DisplayName");
+//            String doctorName = getIntent().getStringExtra("DisplayName");
 //
 //         Create a new appointment object with the generated ID, appointment date & time,
-            Appointment appointmentData = new Appointment(appointmentId, time, doctorName);
+//            Appointment appointmentData = new Appointment(appointmentId, time, doctorName);
 
-
-            Log.e("USER", appointmentId);
-            Log.e("USER", time);
-            Log.e("USER", doctorName);
 
 
 ////        postId, PatientName, postContent, postTime, 0
