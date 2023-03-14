@@ -16,16 +16,21 @@ import com.google.firebase.database.FirebaseDatabase;
 @SuppressLint("CustomSplashScreen")
 public class SplashScreen extends AppCompatActivity {
 
+
     FirebaseUser firebaseUser;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
 
+
         // Delay the splash screen by 3 seconds
+
 
         new Handler().postDelayed((Runnable) () -> {
 
@@ -44,3 +49,4 @@ public class SplashScreen extends AppCompatActivity {
         }, 3000);
     }
 }
+
