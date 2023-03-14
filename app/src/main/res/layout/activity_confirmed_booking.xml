@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConfirmedBooking"
+    android:padding="50dp"
+    >
+
+
+    <ImageView
+        android:id="@+id/bookingSuccessfulChecked"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_checked"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/circle_shape"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/previous_button" />
+
+    <TextView
+        android:id="@+id/inHouseHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="In-house appointment request"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/bookingSuccessfulChecked"
+        app:layout_constraintStart_toStartOf="@id/bookingSuccessfulChecked"
+        app:layout_constraintEnd_toEndOf="@id/bookingSuccessfulChecked"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/serviceNameHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        app:layout_constraintTop_toBottomOf="@id/inHouseHeading"
+        app:layout_constraintStart_toStartOf="@+id/inHouseHeading"
+        />
+
+
+    <TextView
+        android:id="@+id/serviceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kofi Mensah"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/serviceNameHeading"
+        app:layout_constraintStart_toStartOf="@id/serviceNameHeading"
+        />
+
+    <TextView
+        android:id="@+id/serviceHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Service:"
+
+        app:layout_constraintTop_toBottomOf="@id/inHouseHeading"
+        app:layout_constraintStart_toEndOf="@id/serviceNameHeading"
+        app:layout_constraintEnd_toEndOf="@+id/inHouseHeading"
+        />
+
+
+    <TextView
+        android:id="@+id/serviceRole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Therapist"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/serviceHeading"
+        app:layout_constraintStart_toStartOf="@id/serviceHeading"
+        />
+
+
+    <TextView
+        android:id="@+id/appointmentDateHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Date:"
+        app:layout_constraintTop_toBottomOf="@id/serviceRole"
+        app:layout_constraintStart_toStartOf="@+id/inHouseHeading"
+        />
+
+    <TextView
+        android:id="@+id/appointmentDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="13 March, 2023"
+        app:layout_constraintTop_toBottomOf="@id/appointmentDateHeading"
+        app:layout_constraintStart_toStartOf="@+id/appointmentDateHeading"
+        />
+
+    <TextView
+        android:id="@+id/appointmentTimeHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Time:"
+        app:layout_constraintTop_toBottomOf="@id/serviceRole"
+        app:layout_constraintStart_toStartOf="@id/serviceRole"
+        />
+
+    <TextView
+        android:id="@+id/appointmentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginStart="30dp"
+        android:textSize="15sp"
+        android:text="9:00am - 10:00am"
+        app:layout_constraintTop_toBottomOf="@id/appointmentTimeHeading"
+        app:layout_constraintStart_toStartOf="@+id/appointmentTimeHeading"
+        />
+
+
+
+<!--    <Button-->
+<!--        android:id="@+id/next_progress_btn"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:backgroundTint="@color/primary_color"-->
+<!--        android:text="Confirm booking details"-->
+<!--        android:onClick="onBookAppointmentClick"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/appointmentDate"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

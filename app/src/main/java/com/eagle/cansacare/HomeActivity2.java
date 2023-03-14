@@ -102,7 +102,9 @@ public class HomeActivity2 extends AppCompatActivity {
                 fragment = new HomeFragment();
             } else if (menuSelectedId == R.id.navigation_dashboard) {
                 fragment = new DashboardFragment();
-            } else {
+            } else if (menuSelectedId == R.id.book_appointment){
+                fragment = new BookingFragment();
+            }else {
                 fragment = new BookingFragment();
 
             }

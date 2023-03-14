@@ -80,7 +80,44 @@
     <string name="share_with_the_community">Share with the community</string>
     <string name="edit_text_hint">Share freely your thoughts with the community and support your pairs</string>
     <string name="post_send">Share</string>
+<<<<<<< HEAD
     <string name="thread_greetings">How are you doing today?</string>
+=======
+    <string name="time">7:00</string>
+    <string name="service_displayName">Dr Martin Agyei</string>
+    <string name="service_role">Oncologist</string>
+    <string name="specialty">Specialty:</string>
+    <string name="service_type_one">Cervical Cancer</string>
+    <string name="service_type_two">Pediatrics</string>
+    <string name="video_appointment">Video appointment</string>
+    <string name="in_house_appointment">In-house appointment</string>
+    <string name="availabilityHeading">Availability</string>
+    <string name="availabiltySubheading">Select appointment date and time</string>
+    <string name="appointment_time">Choose your appointment time :</string>
+    <string name="BookAppointmentBttn">Book an appointment</string>
+    <string name="dr_name_sample">Dr Martin DIEME</string>
+    <string name="dr_title_sample">Oncologist</string>
+    <string name="date_choice">Please select a date</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="saturday">Saturday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="time_choice">Please select a time</string>
+    <string name="first_time">8:00-9:00am</string>
+    <string name="second_time">9:00-10:00am</string>
+    <string name="third_time">10:00-11:00am</string>
+    <string name="fourth_time">2:00-3:00pm</string>
+    <string name="fifth_time">3:00-4:00pm</string>
+    <string name="sixth_time">4:00-5:00pm</string>
+    <string name="confirm_appointment">Appointment confirmation</string>
+    <string name="time_title">Time :</string>
+    <string name="date_title">Date :</string>
+    <string name="date_sample">Monday 23, march 2023</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+>>>>>>> 6c3324185e5d3e9559f2498646140513662030b0
 
 
 </resources>

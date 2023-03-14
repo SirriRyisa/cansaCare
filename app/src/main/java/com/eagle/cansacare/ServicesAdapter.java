@@ -42,11 +42,12 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.Servic
 
 //Setting a click listener to move to the service details page
         holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(),ServiceBooking.class);
+            Intent intent = new Intent(v.getContext(),BookingServiceAppointment.class);
 
 //            getting the data fir the specfic item selected to move to the
             intent.putExtra("DisplayName",servicesList.getDisplayName());
             intent.putExtra("title",servicesList.getTitle());
+            intent.putExtra("schedule",servicesList.getSchedule());
 
             v.getContext().startActivity(intent);
 
@@ -59,7 +60,7 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.Servic
     }
 
 
-    public class ServicesViewHolder extends RecyclerView.ViewHolder {
+    public static class ServicesViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView imageView;
         public TextView serviceName;
