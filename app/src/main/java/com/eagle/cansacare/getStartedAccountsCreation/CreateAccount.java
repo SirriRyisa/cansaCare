@@ -60,7 +60,7 @@ public class CreateAccount extends AppCompatActivity {
 
                 firebaseFirestore.collection("User")
                                 .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
-                                .set(new UserModel(firstName,lastName,email,password,userId = FirebaseAuth.getInstance().getUid(),displayName = firstName + lastName));
+                                .set(new UserModel(firstName,lastName,email,password,userId = FirebaseAuth.getInstance().getUid(),displayName = firstName + "" + lastName));
              })
 
 
