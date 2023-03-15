@@ -71,13 +71,15 @@
 
         <TextView
             android:id="@+id/post_caption"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             app:layout_constraintTop_toBottomOf="@+id/post_image"
             app:layout_constraintStart_toStartOf="parent"
-            android:hint="Caption"
+            android:text="Caption"
+            android:background="@color/primary_color"
             android:textSize="32sp"
+            android:textColor="@color/white"
             android:textStyle="bold"/>
 
         <TextView
