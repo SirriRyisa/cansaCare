@@ -111,7 +111,7 @@
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:background="@drawable/button_bg_orange"
+                android:backgroundTint="@color/primary_color"
                 android:text="@string/confirm"
                 android:textColor="@color/white"
                 app:layout_constraintRight_toRightOf="parent"

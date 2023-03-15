@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.eagle.cansacare.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -36,6 +37,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.txtViewCaption.setText(mList.get(position).getTitle());
+//
+
 //        holder.txtViewDescription.setText(mList.get(position).getDescription());
 
         holder.bindData(mList.get(position));
@@ -78,6 +81,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder>{
                     postDetailActivity.putExtra("title", mList.get(position).getTitle());
                     postDetailActivity.putExtra("description", mList.get(position).getDescription());
                     postDetailActivity.putExtra("postKey", mList.get(position).getKey());
+                    postDetailActivity.putExtra("image", mList.get(position).getPicture());
 
                     long timeStamp = (long) mList.get(position).getTimeStamp();
                     postDetailActivity.putExtra("postDate", timeStamp);

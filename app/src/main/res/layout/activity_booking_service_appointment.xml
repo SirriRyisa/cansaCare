@@ -75,10 +75,10 @@
 
             <ImageView
                 android:id="@+id/dr_profile_picture"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:contentDescription="@string/dr_title_sample"
-                android:src="@drawable/circle_ic"
+                android:src="@drawable/ic_vessels"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -159,7 +159,7 @@
                 android:onClick="onRadioButtonClicked"
                 android:paddingHorizontal="10dp"
                 android:text="@string/monday"
-                android:textColor="@drawable/radio_text_selector"
+                android:textColor="@color/secondary_color"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -174,7 +174,7 @@
                 android:onClick="onRadioButtonClicked"
                 android:paddingHorizontal="10dp"
                 android:text="@string/tuesday"
-                android:textColor="@drawable/radio_text_selector"
+                android:textColor="@color/secondary_color"
                 app:layout_constraintLeft_toRightOf="@id/choice_monday"
                 app:layout_constraintRight_toLeftOf="@id/choice_wednesday"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -190,7 +190,7 @@
                 android:onClick="onRadioButtonClicked"
                 android:paddingHorizontal="10dp"
                 android:text="@string/wednesday"
-                android:textColor="@drawable/radio_text_selector"
+                android:textColor="@color/secondary_color"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -206,7 +206,7 @@
                 android:onClick="onRadioButtonClicked"
                 android:paddingHorizontal="10dp"
                 android:text="@string/thursday"
-                android:textColor="@drawable/radio_text_selector"
+                android:textColor="@color/secondary_color"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/choice_monday" />
 
@@ -222,7 +222,7 @@
                 android:onClick="onRadioButtonClicked"
                 android:paddingHorizontal="10dp"
                 android:text="@string/friday"
-                android:textColor="@drawable/radio_text_selector"
+                android:textColor="@color/secondary_color"
                 app:layout_constraintLeft_toRightOf="@id/choice_monday"
                 app:layout_constraintRight_toLeftOf="@id/choice_wednesday"
                 app:layout_constraintTop_toBottomOf="@id/choice_tuesday" />
@@ -239,7 +239,7 @@
                 android:onClick="onRadioButtonClicked"
                 android:paddingHorizontal="10dp"
                 android:text="@string/saturday"
-                android:textColor="@drawable/radio_text_selector"
+                android:textColor="@color/secondary_color"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/choice_wednesday" />
 
@@ -286,7 +286,7 @@
                 android:onClick="onRadioButtonClicked"
                 android:paddingHorizontal="10dp"
                 android:text="@string/first_time"
-                android:textColor="@drawable/radio_text_selector"
+                android:textColor="@color/secondary_color"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -301,7 +301,7 @@
                 android:onClick="onRadioButtonClicked"
                 android:paddingHorizontal="10dp"
                 android:text="@string/second_time"
-                android:textColor="@drawable/radio_text_selector"
+                android:textColor="@color/secondary_color"
                 app:layout_constraintLeft_toRightOf="@id/choice_first_time"
                 app:layout_constraintRight_toLeftOf="@id/choice_third_time"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -317,7 +317,7 @@
                 android:onClick="onRadioButtonClicked"
                 android:paddingHorizontal="8dp"
                 android:text="@string/third_time"
-                android:textColor="@drawable/radio_text_selector"
+                android:textColor="@color/secondary_color"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -333,7 +333,7 @@
                 android:onClick="onRadioButtonClicked"
                 android:paddingHorizontal="8dp"
                 android:text="@string/fourth_time"
-                android:textColor="@drawable/radio_text_selector"
+                android:textColor="@color/secondary_color"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/choice_first_time" />
 
@@ -349,7 +349,7 @@
                 android:onClick="onRadioButtonClicked"
                 android:paddingHorizontal="8dp"
                 android:text="@string/fifth_time"
-                android:textColor="@drawable/radio_text_selector"
+                android:textColor="@color/secondary_color"
                 app:layout_constraintLeft_toRightOf="@id/choice_first_time"
                 app:layout_constraintRight_toLeftOf="@id/choice_third_time"
                 app:layout_constraintTop_toBottomOf="@id/choice_second_time" />
@@ -366,7 +366,7 @@
                 android:onClick="onRadioButtonClicked"
                 android:paddingHorizontal="8dp"
                 android:text="@string/sixth_time"
-                android:textColor="@drawable/radio_text_selector"
+                android:textColor="@color/secondary_color"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/choice_third_time" />
 
@@ -384,7 +384,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
         android:textColorHint="@color/white"
-        android:background="@drawable/button_bg_orange"
+        android:backgroundTint="@color/primary_color"
         android:hint="@string/BookAppointmentBttn"
         app:layout_constraintTop_toBottomOf="@id/choice_type_of_time_appointment" />
 
