@@ -80,7 +80,9 @@
     <string name="share_with_the_community">Share with the community</string>
     <string name="edit_text_hint">Share freely your thoughts with the community and support your pairs</string>
     <string name="post_send">Share</string>
+
     <string name="thread_greetings">How are you doing today?</string>
+
     <string name="time">7:00</string>
     <string name="service_displayName">Dr Martin Agyei</string>
     <string name="service_role">Oncologist</string>

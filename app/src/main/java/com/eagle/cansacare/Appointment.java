@@ -8,17 +8,37 @@ public class Appointment {
     private String type;
     private String doctorName;
     private String userId;
+    private String doctorId;
 
 
     public Appointment(String appointmentId, String type, String date, String time) {
+    
         this.appointmentId = appointmentId;
         this.type = type;
         this.date = date;
         this.time = time;
+        this.userId = userId;
+//        this.doctorId = doctorId;
     }
 
     public class appointment {
 
+    }
+
+//    public String getDoctorId() {
+//        return doctorId;
+//    }
+//
+//    public void setDoctorId(String doctorId) {
+//        this.doctorId = doctorId;
+//    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getType() {

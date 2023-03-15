@@ -70,14 +70,6 @@ public class HomeActivity2 extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
-//        setupNewsPostImage();
-
-//         iniNewsfeed();
-//        ImageView image = findViewById(R.id.dummy_image);
-//
-//        Picasso.get().load("https://i.imgur.com/DvpvklR.png").into(image);
-
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.floating_bar);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,7 +173,7 @@ public class HomeActivity2 extends AppCompatActivity {
         popAddComment.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         popAddComment.getWindow().setLayout(Toolbar.LayoutParams.MATCH_PARENT, Toolbar.LayoutParams.WRAP_CONTENT);
         popAddComment.getWindow().getAttributes().gravity = Gravity.TOP;
-//
+
 //        ini news feed widgets
         newsFeedUserImage = view.findViewById(R.id.post_image);
         newsPostImage = view.findViewById(R.id.blog_image_view);
@@ -189,13 +181,6 @@ public class HomeActivity2 extends AppCompatActivity {
         postTitle = view.findViewById(R.id.title_edit_text);
         postDescription = view.findViewById(R.id.description_edit_text);
         postProgressBar = view.findViewById(R.id.progress_bar);
-
-        //Add firebase profile image
-
-//        Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/cansacare.appspot.com/o" + "/v0/b/cansacare.appspot.com/o/images/8523b024-8061-493f-ba74-01e1c9fa48ae.png").into(newsFeedUserImage);
-
-
-//        Add post Listener
 
        newsPostImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -209,7 +194,6 @@ public class HomeActivity2 extends AppCompatActivity {
 
                     String title = postTitle.getText().toString().trim();
                     String message = postDescription.getText().toString().trim();
-//                    String picture = newsPostImage.toString();
 
                     String image = UUID.randomUUID().toString() + ".png";
                     StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("images/"+image);
@@ -233,9 +217,8 @@ public class HomeActivity2 extends AppCompatActivity {
                                 Uri downloadUri = task.getResult();
                                 Post post = new Post(title, message, currentUser.getUid(), downloadUri.toString());
                                 addPost(post);
-                                Log.i("cancer","post added");
                             } else {
-                                Log.e("cancer","failed to upload image");
+
                             }
 
                         }
