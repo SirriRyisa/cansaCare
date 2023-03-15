@@ -10,7 +10,9 @@ public class Appointment {
     private String userId;
     private String doctorId;
 
-    public Appointment(String appointmentId, String type, String date, String time, String userId) {
+
+    public Appointment(String appointmentId, String type, String date, String time) {
+    
         this.appointmentId = appointmentId;
         this.type = type;
         this.date = date;

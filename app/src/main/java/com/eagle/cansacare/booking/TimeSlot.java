@@ -1,14 +1,12 @@
 package com.eagle.cansacare.booking;
 
-import com.google.firebase.Timestamp;
-
 public class TimeSlot {
     private String slot;
     private  boolean isSlected;
 
-    public TimeSlot(String slot, boolean isSelected){
+    public TimeSlot(String slot){
         this.slot = slot;
-        this.isSlected = isSelected;
+        this.isSlected = isSlected;
     }
 
     public String getSlot() {
