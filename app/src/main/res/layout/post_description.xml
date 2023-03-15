@@ -11,6 +11,51 @@
         android:layout_height="match_parent">
 
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tool_bar_chat"
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/secondary_color"
+            app:layout_constraintBottom_toBottomOf="@+id/alarm_notification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/blog_post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blog Post"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_notifications_black_24dp"
+            app:layout_constraintBottom_toBottomOf="@id/tool_bar_chat"
+            app:layout_constraintEnd_toStartOf="@id/alarm_notification"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/primary_color" />
+
+        <TextView
+            android:id="@+id/alarm_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:text="1 upcoming medication at 5:30pm"
+            android:textColor="@color/primary_color"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/tool_bar_chat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/post_image"
@@ -22,7 +67,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/tool_bar_chat" />
 
         <TextView
             android:id="@+id/post_caption"
@@ -49,8 +94,8 @@
             android:id="@+id/post_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginTop="56dp"
+            android:paddingLeft="12dp"
+            android:paddingTop="8dp"
             android:lineSpacingExtra="8dp"
             android:text="@string/blog_description"
             app:layout_constraintEnd_toEndOf="parent"
