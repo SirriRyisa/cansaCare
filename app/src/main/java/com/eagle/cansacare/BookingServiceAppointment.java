@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eagle.cansacare.booking.DoctorSchedule;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -58,6 +59,8 @@ public class BookingServiceAppointment extends AppCompatActivity {
             // Generate a new ID for the appointment
             String appointmentId = appointmentsRef.push().getKey();
 
+            // Generate the ID of the User
+            String userId = FirebaseAuth.getInstance().getUid();
 
             // Get references to the UI elements
             RadioButton firstTime = findViewById(R.id.choice_first_time);
@@ -126,7 +129,7 @@ public class BookingServiceAppointment extends AppCompatActivity {
                 Toast.makeText(this, "Please select a date", Toast.LENGTH_SHORT).show();
             }
             // Create a new appointment object
-            Appointment appointment = new Appointment(appointmentId, type, date, time);
+            Appointment appointment = new Appointment(appointmentId, type, date, time,userId);
 
             // Debug logging: print out appointment data
             Log.d("Appointment", "Type: " + appointment.getType());
