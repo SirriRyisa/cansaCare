@@ -9,17 +9,20 @@ public class Appointment {
     private String doctorName;
     private String userId;
     private String doctorId;
+    private String patientName;
 
-    public Appointment(String appointmentId, String type, String date, String time, String userId) {
+    public Appointment(String appointmentId, String type, String date, String time, String userId,String patientName) {
         this.appointmentId = appointmentId;
         this.type = type;
         this.date = date;
         this.time = time;
         this.userId = userId;
+        this.patientName = patientName;
+
 //        this.doctorId = doctorId;
     }
 
-    public class appointment {
+    static class appointment {
 
     }
 
@@ -30,6 +33,15 @@ public class Appointment {
 //    public void setDoctorId(String doctorId) {
 //        this.doctorId = doctorId;
 //    }
+
+
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
+    }
 
     public String getUserId() {
         return userId;
