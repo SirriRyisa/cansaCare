@@ -12,6 +12,7 @@ public class Appointment {
     private String patientName;
 
     public Appointment(String appointmentId, String type, String date, String time, String userId,String patientName) {
+
         this.appointmentId = appointmentId;
         this.type = type;
         this.date = date;
