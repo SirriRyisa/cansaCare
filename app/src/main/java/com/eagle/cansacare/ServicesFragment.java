@@ -80,7 +80,7 @@ public class ServicesFragment extends Fragment {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     ServicesList serviceList = dataSnapshot.getValue(ServicesList.class);
 
-//                    getting the schedule from firebase
+//                  getting the schedule from firebase
                     assert serviceList != null;
                     Log.d(TAG, serviceList.getSchedule().toString());
                     servicesLists.add(serviceList);

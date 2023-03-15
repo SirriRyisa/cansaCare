@@ -42,8 +42,6 @@ public class CreateNewThreadPost extends AppCompatActivity {
 
         postButton.setOnClickListener(view -> {
             // Get the current user's Name
-//            String patientName = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName();
-
             String userId = Objects.requireNonNull(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
 
             Log.e("USER", userId);
