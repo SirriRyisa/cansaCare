@@ -53,6 +53,7 @@ public class CreateNewThreadPost extends AppCompatActivity {
                 }
 
                 String patientName = Objects.requireNonNull(Objects.requireNonNull(task.getResult().getData()).get("displayName")).toString();
+
                 // Generate a new ID for the post
                 String postId = databaseReference.push().getKey();
 

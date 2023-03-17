@@ -17,11 +17,18 @@ import com.eagle.cansacare.booking.DoctorSchedule;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Objects;
 
 public class BookingServiceAppointment extends AppCompatActivity {
 
     Button bookAnAppointment;
     ImageView sendBack;
+
+    private final CollectionReference databaseReferenceStore = FirebaseFirestore.getInstance().collection("User");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +68,15 @@ public class BookingServiceAppointment extends AppCompatActivity {
 
             // Generate the ID of the User
             String userId = FirebaseAuth.getInstance().getUid();
+            Log.e("USER", userId);
+
+            assert userId != null;
+            databaseReferenceStore.document(userId).get().addOnCompleteListener(task -> {
+
+                if (!task.isSuccessful()){
+                    return;
+                }
+                String patientName = Objects.requireNonNull(Objects.requireNonNull(task.getResult().getData()).get("displayName")).toString();
 
             // Get references to the UI elements
             RadioButton firstTime = findViewById(R.id.choice_first_time);
@@ -129,7 +145,7 @@ public class BookingServiceAppointment extends AppCompatActivity {
                 Toast.makeText(this, "Please select a date", Toast.LENGTH_SHORT).show();
             }
             // Create a new appointment object
-            Appointment appointment = new Appointment(appointmentId, type, date, time,userId);
+            Appointment appointment = new Appointment(appointmentId, type, date, time,userId,patientName);
 
             // Debug logging: print out appointment data
             Log.d("Appointment", "Type: " + appointment.getType());
@@ -159,8 +175,9 @@ public class BookingServiceAppointment extends AppCompatActivity {
         });
 
 
-    }
+    });
 
+}
     public void onRadioButtonClicked(View view) {
     }
 }
