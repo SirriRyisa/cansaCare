@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AppointmentOpened">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/appointment_opened_header"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardBackgroundColor="@color/secondary_color"
+        app:contentPadding="20dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/back_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/back"
+                android:src="@drawable/back_ic"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/patient_name_appointment_opened"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/patient_name"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/back_ic" />
+
+            <TextView
+                android:id="@+id/type_of_cancer_appointment_opened"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/breast_cancer"
+                android:textColor="@color/primary_color"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/patient_name_appointment_opened" />
+
+            <ImageView
+                android:id="@+id/patient_profile_picture_appointment_opened"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="@string/patient_profile_picture"
+                android:src="@drawable/circle_ic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/appointment_booked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary_color"
+        android:elevation="0dp"
+        android:hint="@string/appointment_booked"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/appointment_opened_header" />
+
+    <Button
+        android:id="@+id/join_the_call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/radio_selector"
+        android:drawableEnd="@drawable/video_ic"
+        android:text="@string/join_the_call"
+        android:textColor="@color/secondary_color"
+        app:layout_constraintTop_toBottomOf="@+id/appointment_booked" />
+
+    <TextView
+        android:id="@+id/appointment_details_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/appointment_details"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/join_the_call" />
+
+    <TextView
+        android:id="@+id/date_title_appointment_opened"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/date_title"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appointment_details_title" />
+
+    <TextView
+        android:id="@+id/date_sample_appointment_opened"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/date_sample"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@+id/date_title_appointment_opened"
+        app:layout_constraintTop_toBottomOf="@id/appointment_details_title" />
+
+    <TextView
+        android:id="@+id/appointment_time_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/time_title"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_title_appointment_opened" />
+
+    <TextView
+        android:id="@+id/appointment_time_sample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/time_sample"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@+id/appointment_time_title"
+        app:layout_constraintTop_toBottomOf="@+id/date_title_appointment_opened" />
+
+    <View
+        android:id="@+id/appointment_opened_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/light_grey"
+        app:layout_constraintTop_toBottomOf="@+id/appointment_time_sample" />
+
+    <Button
+        android:id="@+id/cancel_appointment_opened"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@null"
+        android:text="@string/cancel_appointment"
+        android:textColor="@color/notifications_red"
+        app:layout_constraintTop_toBottomOf="@+id/appointment_opened_separator" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
