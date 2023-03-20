@@ -117,6 +117,17 @@
     <string name="date_sample">Monday 23, march 2023</string>
     <string name="cancel">Cancel</string>
     <string name="confirm">Confirm</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="patient_name">Patient Name</string>
+    <string name="type_of_cancer">Type of cancer</string>
+    <string name="appointment_date">Monday</string>
+    <string name="doctor_title">Oncologist</string>
+    <string name="doctor_name">Doctor name</string>
+    <string name="delete">delete</string>
+    <string name="appointment_booked">Appointment booked</string>
+    <string name="join_the_call">Join the call</string>
+    <string name="appointment_details">Appointment details :</string>
+    <string name="cancel_appointment">Cancel Appointment</string>
 
 
 </resources>

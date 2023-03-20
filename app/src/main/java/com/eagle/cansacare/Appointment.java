@@ -23,7 +23,7 @@ public class Appointment {
 //        this.doctorId = doctorId;
     }
 
-    static class appointment {
+    public Appointment() {
 
     }
 
